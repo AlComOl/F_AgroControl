@@ -30,7 +30,7 @@ export class ModalCrearParcelaComponent implements OnInit {
 
   parcelas: Parcela[] = [];
 
-  parcelaSeleecionada: any = [];  // Inicializado a null o un objeto vacío
+  parcelaSeleecionada: any = null;  // Inicializado a null o un objeto vacío
 
 
 
@@ -117,34 +117,32 @@ export class ModalCrearParcelaComponent implements OnInit {
 
 
 
-  revisarParcelas(parcela:any){
+  // revisarParcelas(parcela:any){
+  //   const index = this.parcelaSeleecionada.indexOf(parcela);
 
 
-    const index = this.parcelaSeleecionada.indexOf(parcela);
+  //   if (index === -1) {
 
 
-    if (index === -1) {
+  //     this.parcelaSeleecionada.push(parcela); // Lo agrega si no está
 
 
-      this.parcelaSeleecionada.push(parcela); // Lo agrega si no está
+  //   } else {
 
 
-    } else {
+  //     this.parcelaSeleecionada.splice(index, 1); // Lo quita si ya está
 
 
-      this.parcelaSeleecionada.splice(index, 1); // Lo quita si ya está
+  //   }
 
 
-    }
-
-
-  }
+  // }
 
 
 
 
 
-  revisarParcela(parcela: any) {
+  revisarParcelas(parcela: any) {
     // Si la máquina ya está seleccionada, la deseleccionamos
     if (this.parcelaSeleecionada === parcela) {
       this.parcelaSeleecionada = null;
