@@ -21,10 +21,14 @@ export class FooterComponent {
   IncidenciaMenu() {
     this.isOrdenMenuVisible = false;
     this.isIncidenciaMenuVisible = !this.isIncidenciaMenuVisible;
+    this.isCuentaMenuVisible = false;
+
   }
 
   closeIncidenciaMenu() {
     this.isIncidenciaMenuVisible = false;
+    this.isOrdenMenuVisible = false;
+
   }
 
   OrdenMenu(){

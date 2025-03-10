@@ -1,12 +1,9 @@
 /* Estilo del footer fijo */
 #fixed-footer {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
+  bottom: 0;
   height: 7%;
   z-index: 10;
   background-color: #004d40;

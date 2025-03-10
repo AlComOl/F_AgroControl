@@ -39,39 +39,39 @@
 
 
   <!-- Footer Fijo -->
-  <div id="fixed-footer">
+  <div id="fixed-footer" class="d-flex justify-content-between">
 
     <!-- Botón Home -->
     <div class="home">
-      <a routerLink="j_campo/dashboard">
+      <div class="btn" routerLink="j_campo/dashboard">
         <img src="/Home.svg" alt="home" />
-      </a>
+      </div>
     </div>
 
     <!-- Botón Calendario -->
     <div class="calendar">
-      <a routerLink="jefe_campo/calendario">
+      <div class="btn" routerLink="jefe_campo/calendario">
         <img src="/Calendar.svg" alt="calendar" />
-      </a>
+      </div>
     </div>
 
     <!-- Botón Incidencias -->
     <div class="incidencia">
-      <div type="button" class="btn" (click)="IncidenciaMenu()">
+      <div class="btn" (click)="IncidenciaMenu()">
         <img src="/Incidencia.svg" alt="incidencia" />
       </div>
     </div>
 
     <!-- Botón Orden -->
     <div class="orden">
-      <div type="button" class="btn" (click)="OrdenMenu()">
+      <div class="btn" (click)="OrdenMenu()">
         <img src="/tareas.svg" alt="ordenes" />
       </div>
     </div>
 
     <!-- Botón Menú -->
     <div class="menu">
-      <div type="button" class="btn" (click)="Menu()">
+      <div class="btn" (click)="Menu()">
         <img src="/menu.svg" alt="menu" />
       </div>
     </div>
