@@ -14,8 +14,7 @@ import { OrdenEnCursoComponent } from './components/j_campo/orden/orden-curso/or
 import { OrdenPausadasComponent } from './components/j_campo/orden/orden-pausadas/orden-pausadas.component';
 import { OrdenPendientesComponent } from './components/j_campo/orden/orden-pendientes/orden-pendientes.component';
 import { OrdenTerminadasComponent } from './components/j_campo/orden/orden-terminadas/orden-terminadas.component';
-import{FooterComponent} from './components/j_campo/footer/footer.component';
-import{HeaderComponent} from './components/j_campo/header/header.component';
+
 import { OrdenNoFinalizadaComponent } from './components/aplicador/orden/orden-no-finalizada/orden-no-finalizada.component';
 import { OrdenFinalizadaComponent } from './components/aplicador/orden/orden-finalizada/orden-finalizada.component';
 import { CrearIncidenciaComponent } from './components/aplicador/incidencias/crear-incidencia/crear-incidencia.component';
@@ -50,7 +49,7 @@ export const routes: Routes = [
           { path: 'j_campo/modal-crear-tratamiento', component: ModalCrearTratamientoComponent },
           { path: 'j_campo/modal-crear-tarea', component: ModalCrearTareaComponent },
           {
-            path: 'incidencias',
+            path: 'j_campo/incidencias',
             children: [
               { path: 'tipo-personal', component: TipoPersonalComponent },
               { path: 'tipo-maquina', component: TipoMaquinaComponent },
