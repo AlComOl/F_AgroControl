@@ -9,14 +9,14 @@
               <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
               <h2 class="fw-semibold ms-3 mt-2">Parcela</h2>
             </div>
-            <h3 class="mb-0">{{ parcelaSeleccionada || 'No seleccionada' }}</h3>
+            <h3 class="mb-0">{{ parcelaSeleccionada?.nombre || 'No seleccionada' }}</h3>
           </div>
           <app-modal-crear-parcela #modalVerParcelas (parcelaGuardada)="recibirParcela($event)"></app-modal-crear-parcela>
         </div>
       </div>
     </div>
 
-    <div class="col-12 mb-3 ">
+    <div class="col-12 mb-3">
       <div class="card shadow" (click)="abrirModalTarea()" style="cursor: pointer;">
         <div class="card-body tareas">
           <div class="card-title d-flex justify-content-between align-items-center">
@@ -39,7 +39,16 @@
           <img src="/Persona-Icon.svg" alt="Aplicador img" class="img-fluid me-2" />
           <h2 class="fw-semibold ms-3 mt-2">Aplicador</h2>
         </div>
-        <h3 class="mb-0">{{ aplicadoresSeleccionados|| 'No seleccionada' }}</h3>
+        @if (aplicadoresSeleccionados != null || aplicadoresSeleccionados) {
+          <div class="d-flex flex-column">
+          @for (aplicador of aplicadoresSeleccionados; track aplicador.id) {
+            <h5>{{aplicador.nombre}}</h5>
+          }
+          </div>
+        } @else {
+          <h3 class="mb-0">No seleccionado</h3>
+        }
+
       </div>
       <app-modal-crear-aplicador #modalVerAplicador (aplicadoresGuardados)="recibirAplicador($event)"></app-modal-crear-aplicador>
     </div>
@@ -54,9 +63,9 @@
           <img src="/Maquina-Icon.svg" alt="Máquina img" class="img-fluid me-2" />
           <h2 class="fw-semibold ms-3 mt-2">Máquina</h2>
         </div>
-        <h3 class="mb-0">{{ maquinaSeleccionada || 'No seleccionada' }}</h3>
+        <h3 class="mb-0">{{ maquinaSeleccionada?.nombre || 'No seleccionada' }}</h3>
       </div>
-      <app-modal-crear-maquina #modalVerMaquina (maquinasGuardadas)="recibirMaquina($event)"></app-modal-crear-maquina>
+      <app-modal-crear-maquina #modalVerMaquina (maquinaGuardada)="recibirMaquina($event)"></app-modal-crear-maquina>
     </div>
   </div>
 </div>
@@ -69,7 +78,7 @@
             <img src="/Tratamiento-Icon.svg" alt="Tratamiento Icon" class="img-fluid me-2" />
             <h2 class="fw-semibold ms-3 mt-2">Tratamiento</h2>
           </div>
-          <h3 class="mb-0">{{ tratamientoSeleccionado?.nombre_tratamiento || 'No seleccionado' }}</h3>
+          <h3 class="mb-0 ms-5">{{ tratamientoSeleccionado?.nombre_tratamiento || 'No seleccionado' }}</h3>
         </div>
         <app-modal-crear-tratamiento #modalVerTratamiento (tratamientoGuardado)="recibirTratamiento($event)"></app-modal-crear-tratamiento>
       </div>

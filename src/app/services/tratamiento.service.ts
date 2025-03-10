@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Parcela } from '../models/Parcela';
+import { Tratamiento } from '../models/Tratamiento';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,8 +9,9 @@ export class TratamientoService {
 
   constructor(private http: HttpClient) { }
 
-  getTratamientoAll(): Observable <Parcela[]>{
-    return this.http.get<Parcela[]>('http://127.0.0.1:80/api/tratamiento', );
+  getTratamientoAll(): Observable <Tratamiento[]>{
+    return this.http.get<Tratamiento[]>('http://0.0.0.0/api/tratamiento', );
   }
 
 }
+  
