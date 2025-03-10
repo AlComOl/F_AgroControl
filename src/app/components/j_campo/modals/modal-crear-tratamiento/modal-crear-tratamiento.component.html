@@ -28,14 +28,15 @@
           </div>
           <div class="d-flex justify-content-around w-100 m-1">
 
-        @for(tratamiento of tratamientoSeleccionado; track tratamiento.id){
-        <img src="/Tratamiento-Icon.svg" alt="Imagen de ejemplo" class="imagen-circular">
-        <label class="form-check-label w-100 d-flex align-items-center">
-          {{ tratamiento.nombre}}
-          <input type="checkbox" class="ms-auto"
-                 [checked]="tratamientoSeleccionado === tratamiento" (change)="seleccionarTratamiento(tratamiento)">
-        </label>
-    }
+        @for(tratamiento of tratamientos; track tratamiento.id){
+          <div class="form-check d-flex align-items-center w-100">
+            <img src="/Tratamiento-Icon.svg" alt="Imagen de ejemplo" class="imagen-circular">
+            <label class="form-check-label w-100 d-flex align-items-center">
+              {{tratamiento.nombre_tratamiento}}
+              <input type="checkbox" class="ms-auto" [checked]="tratamientoSeleccionado === tratamiento" (change)="seleccionarTratamiento(tratamiento)">
+            </label>
+          </div>
+        }
   </div>
 
   </div>

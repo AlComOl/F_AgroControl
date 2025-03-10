@@ -15,6 +15,9 @@ import { Maquina } from '../../../../models/Maquina';
 
 import { OrdenesService } from '../../../../services/ordenes.service';
 
+import * as bootstrap from 'bootstrap';
+
+
 
 @Component({
   selector: 'app-crear-orden',
@@ -152,12 +155,17 @@ guardarDatos(){
 }
 
 
-ventanaTareaCreada(){
-  this.ventanaVisible = true; // Muestra la ventana
+ventanaTareaCreada() {
+  this.ventanaVisible = true;
+
+  const modal = new bootstrap.Modal(document.getElementById('creadaTarea')!);
+  modal.show();
+
   setTimeout(() => {
-    this.ventanaVisible = false; // La oculta después de 15 segundos
-    this.router.navigate(['/dashboard']);
-  }, 1000);
+    this.ventanaVisible = false;
+    modal.hide();
+    this.router.navigate(['j_campo/dashboard']);
+  }, 2000);
 }
 
 
