@@ -10,7 +10,7 @@ import{ OrdenesService } from '../../../../services/ordenes.service';
 })
 export class OrdenTerminadasComponent {
   ordenesTerminadas: any;
-
+  ordenSeleccionada:any;
   parcela:any;
   tarea:any;
   fecha_inicio:any;
@@ -18,5 +18,10 @@ export class OrdenTerminadasComponent {
   constructor(private ordenesService: OrdenesService) {
       this.ordenesService.getOrdenesTerminadas()
         .subscribe(result => this.ordenesTerminadas = result)
+  }
+
+  seleccionarOrdenTerminada(orden:any){
+    console.log(orden);
+    this.ordenSeleccionada = orden;
   }
 }

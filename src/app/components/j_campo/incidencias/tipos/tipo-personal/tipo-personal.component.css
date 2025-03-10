@@ -1,31 +1,29 @@
-/* Estilo del título */
-.table-title {
+.container {
+  display: flex;                /* Usar flexbox para centrar */
+  justify-content: center;      /* Centrar horizontalmente */
+  align-items: center;          /* Centrar verticalmente (si es necesario) */
+  flex-direction: column;       /* Asegurar que los hijos se alineen en columna */
+  margin-top: 100px;            /* Espacio arriba, ajusta según necesites */
+}
+tr th{
+    color: #01533E;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+h1{
+    color: #532301;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom:50px;
+    padding: 0;
+    text-align: center;
+}
+
+tr{
+  color: #01533E;
+
   text-align: center;
-  font-weight: bold;
-  color: #5a3e1b; /* Marrón oscuro */
-  margin-bottom: 30px;
-  font-size: 28px;
 }
 
-body {
-  padding-top: 30px; /* Ajusta según la altura del header */
-}
-
-
-/* Estilo de la tabla */
-.table {
-  background-color: #ffffff; /* Fondo blanco */
-}
-
-/* Encabezados en verde claro */
-.header-text {
-  color: #4CAF50; /* Verde claro */
-  font-weight: bold;
-  font-size: 18px;
-}
-
-/* Datos en negro */
-.data-text {
-  color: #000000; /* Negro */
-  font-size: 16px;
-}

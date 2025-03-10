@@ -50,7 +50,7 @@ export const routes: Routes = [
           { path: 'j_campo/modal-crear-tratamiento', component: ModalCrearTratamientoComponent },
           { path: 'j_campo/modal-crear-tarea', component: ModalCrearTareaComponent },
           {
-            path: 'incidencias',
+            path: 'j_campo/incidencias',
             children: [
               { path: 'tipo-personal', component: TipoPersonalComponent },
               { path: 'tipo-maquina', component: TipoMaquinaComponent },

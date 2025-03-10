@@ -14,5 +14,8 @@ export class TrabajadoresService {
     return this.http.get<User[]>('http://127.0.0.1:80/api/aplicadores')
   }
 
+  obtenerAplicadorporId(id:any){
+    return this.http.get<User>('http://127.0.0.1:80/api/aplicador/',id);
+  }
 
 }
