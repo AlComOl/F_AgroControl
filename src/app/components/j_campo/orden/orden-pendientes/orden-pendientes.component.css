@@ -5,92 +5,20 @@
   flex-direction: column;       /* Asegurar que los hijos se alineen en columna */
   margin-top: 100px;            /* Espacio arriba, ajusta según necesites */
 }
+
 tr th{
     color: #01533E;
+    font-size: 20px;
     text-align: center;
 }
 
-
 h1{
-    color: #532301;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom:50px;
-    padding: 0;
-    text-align: center;
+ display: flex;
+ text-align: center;
 }
 
 tr{
   color: #01533E;
+
   text-align: center;
-}
-.container {
-  margin-top: 10vh;
-  max-height: 80vh;
-  overflow-y: auto;
-}
-
-body {
-  overflow-y: auto; /* Habilita el scroll vertical para todo el cuerpo */
-}
-
-.btn {
-  display: flex;
-  background-color: #532301;
-  text-align: center;
-}
-
-.modal-title {
-  color: #532301;
-  font-weight: bold;
-}
-
-.modal-dialog {
-  margin-top: 20px;
-}
-
-.modal-header {
-  background-color: #ffffff;
-  color: white;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 1050; /* Asegúrate de que el encabezado esté por encima del contenido */
-}
-
-.modal-footer {
-  background-color: #ffffff;
-}
-.title{
-  color: #532301;
-  font-weight: bold;
-}
-.card-body{
-
-  max-height: 80px;
-
-}
-
-.fecha{
-  max-height: 120px !important;
-}
-
-.aplicadores{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.alert-success {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  width: 80%;
-  max-width: 300px;
-  padding: 20px;
-  text-align: center;
-  font-weight: bold;
 }

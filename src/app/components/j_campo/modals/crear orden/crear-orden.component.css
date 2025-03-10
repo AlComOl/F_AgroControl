@@ -4,9 +4,7 @@
   overflow-y: auto;
 }
 
-body {
-  overflow-y: auto; /* Habilita el scroll vertical para todo el cuerpo */
-}
+
 
 .btn {
   display: flex;

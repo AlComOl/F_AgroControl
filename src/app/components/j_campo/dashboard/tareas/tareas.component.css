@@ -1,7 +1,7 @@
 
 
 /* Contenedor general */
-.container {
+.ss{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

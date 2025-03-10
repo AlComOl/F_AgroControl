@@ -51,7 +51,7 @@
 
 body{
   font-family: "Inter", serif;
-  font-optical-sizing: auto;
+  /* font-optical-sizing: auto; */
   font-weight: weight;
   font-style: normal;
 }

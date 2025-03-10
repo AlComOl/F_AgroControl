@@ -18,7 +18,7 @@ export class OrdenesService {
   }
 
   getOrdenesPendientes() {
-    return this.http.get('http://127.0.0.0:80/api/ordenesPendientes');
+    return this.http.get('http://127.0.0.1:80/api/ordenesPendientes');
   }
 
   getOrdenesCurso() {
