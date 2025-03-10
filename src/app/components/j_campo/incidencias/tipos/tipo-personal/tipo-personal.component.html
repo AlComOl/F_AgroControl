@@ -5,7 +5,7 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Tipo</th>
+            <th>Orden</th>
             <th>Descripción</th>
             <th>Fecha </th>
           </tr>
@@ -13,7 +13,7 @@
         <tbody >
           @for(IncidenciaP of incidenciasPersonal; track IncidenciaP.id){
           <tr data-bs-toggle="modal" data-bs-target="#incidenciaPersonaShow" (click)="seleccionarIncidenciaP(IncidenciaP)">
-            <td>{{ persona?.nombre }}</td>
+            <td>{{ IncidenciaP.orden_id }}</td>
             <td>{{ IncidenciaP.descripcion }}</td>
             <td>{{ IncidenciaP.fecha }}</td>
           </tr>
@@ -39,7 +39,7 @@
               <div class="card-body parcelas">
                 <div class="card-title d-flex">
                   <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
-                 <h2 class="fw-semibold"> Parcela:  {{ordenSeleccionada?.parcela.nombre}}</h2>
+                 <h2 class="fw-semibold"> Parcela:  {{ordenSeleccionada?.persona}}</h2>
                 </div>
               </div>
             </div>
