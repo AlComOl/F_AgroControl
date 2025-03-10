@@ -9,9 +9,9 @@ import{ OrdenesService } from '../../../../services/ordenes.service';
   styleUrl: './orden-pausadas.component.css'
 })
 export class OrdenPausadasComponent {
-
+    ordenSeleccionada:any;
     ordenesPausadas: any;
-
+    ordenPausa:any;
     parcela:any;
     tarea:any;
     fecha_inicio:any;
@@ -19,6 +19,11 @@ export class OrdenPausadasComponent {
     constructor(private ordenesService: OrdenesService) {
         this.ordenesService.getOrdenesPausa()
           .subscribe(result => this.ordenesPausadas = result)
+    }
+
+    seleccionarOrdenPausa(orden:any){
+      console.log(orden);
+      this.ordenSeleccionada = orden;
     }
 
 
