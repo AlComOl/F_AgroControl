@@ -106,41 +106,13 @@ export class ModalCrearParcelaComponent implements OnInit {
 
   guardarCambios() {
 
-    console.log('Emitiendo:', this.parcelaSeleecionada);  // Verifica el objeto completo
+    console.log('Emitiendo:', this.parcelaSeleecionada.nombre);  // Verifica el objeto completo
 
     this.parcelaGuardada.emit(this.parcelaSeleecionada);
 
     this.cerrarModal();
 
   }
-
-
-
-
-  // revisarParcelas(parcela:any){
-  //   const index = this.parcelaSeleecionada.indexOf(parcela);
-
-
-  //   if (index === -1) {
-
-
-  //     this.parcelaSeleecionada.push(parcela); // Lo agrega si no está
-
-
-  //   } else {
-
-
-  //     this.parcelaSeleecionada.splice(index, 1); // Lo quita si ya está
-
-
-  //   }
-
-
-  // }
-
-
-
-
 
   revisarParcelas(parcela: any) {
     // Si la máquina ya está seleccionada, la deseleccionamos
