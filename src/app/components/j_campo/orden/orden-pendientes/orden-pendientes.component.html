@@ -20,8 +20,6 @@
         }
         </tbody>
       </table>
-     <button class="btm btn-primary" data-bs-toggle="modal" data-bs-target="#ordenPendienteShow">aaaaa</button>
-
     </div>
   </div>
 
@@ -45,14 +43,24 @@
             </div>
           </div>
 
+          <div class="modal-body">
+            <div class="col-12 mb-3">
+              <div class="card shadow" style="cursor: pointer;">
+                <div class="card-body parcelas">
+                  <div class="card-title d-flex">
+                    <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
+                   <h2 class="fw-semibold"> Tarea:  {{ordenSeleccionada?.tarea}}</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
 
           <div class="col-12 mb-3">
             <div class="card shadow" style="cursor: pointer;">
               <div class="card-body tareas">
                 <div class="card-title d-flex">
                   <img src="/Tarea-Icon.svg" alt="Tarea Icon" class="img-fluid me-2" />
-                  <h3>Tarea: {{ ordenSeleccionada?.tarea }}</h3>
-
+                  <h3>Aplicador: {{ ordenSeleccionada?.nombre_id}}</h3>
                 </div>
               </div>
             </div>

@@ -93,27 +93,3 @@ p{
   margin: 1px 0;
 }
 
-/* Media Query para Pantallas Pequeñas */
-@media (max-width: 576px) {
-  .circle {
-    width: 70vw; /* Más pequeño para dispositivos pequeños */
-    height: 70vw;
-  }
-
-  .center-text {
-    font-size: 1rem; /* Reducir tamaño de texto */
-  }
-
-  .total-tasks {
-    font-size: 0.7rem; /* Reducir tamaño de texto */
-  }
-
-  .legend {
-    width: 100%; /* La leyenda ocupa el 100% del ancho en dispositivos pequeños */
-    text-align: center; /* Centrar los elementos en dispositivos pequeños */
-  }
-
-  .dot {
-    margin-right: 5px; /* Reducir el espacio entre los puntos y el texto */
-  }
-}
