@@ -7,6 +7,7 @@
 }
 tr th{
     color: #01533E;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -22,5 +23,6 @@ h1{
 
 tr{
   color: #01533E;
+
   text-align: center;
 }

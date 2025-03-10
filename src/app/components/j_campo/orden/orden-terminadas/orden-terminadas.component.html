@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <h1>Ordenes terminadas</h1>
+    <div class="col-md-12 text-center">
+      <h1>Ordenes Terminadas</h1>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -11,12 +11,110 @@
           </tr>
         </thead>
         <tbody >
-          <tr *ngFor="let ordenCurso of ordenesTerminadas">
-            <td>{{ ordenCurso.parcela.nombre }}</td>
-            <td>{{ ordenCurso.tarea }}
-            <td>{{ ordenCurso.fecha_inicio }}</td>
+          @for(ordenTerminada of ordenesTerminadas; track ordenTerminada.id){
+          <tr data-bs-toggle="modal" data-bs-target="#ordenTerminadaShow" (click)="seleccionarOrdenTerminada(ordenTerminada)">
+            <td>{{ ordenTerminada.parcela.nombre }}</td>
+            <td>{{ ordenTerminada.tarea }}</td>
+            <td>{{ ordenTerminada.fecha_inicio }}</td>
           </tr>
+        }
         </tbody>
       </table>
     </div>
   </div>
+
+  <div class="modal fade" id="ordenTerminadaShow" tabindex="-1" aria-labelledby="ordenTerminadaModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ordenCursoModal">Orden en curso</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+
+        <div class="modal-body">
+          <div class="col-12 mb-3">
+            <div class="card shadow" style="cursor: pointer;">
+              <div class="card-body parcelas">
+                <div class="card-title d-flex">
+                  <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
+                 <h2 class="fw-semibold"> Parcela:  {{ordenSeleccionada?.parcela.nombre}}</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-body">
+            <div class="col-12 mb-3">
+              <div class="card shadow" style="cursor: pointer;">
+                <div class="card-body tareas">
+                  <div class="card-title d-flex">
+                    <img src="/Tarea-Icon.svg" alt="Parcela Icon" class="img-fluid me-2" />
+                   <h2 class="fw-semibold"> Tarea:  {{ordenSeleccionada?.tarea}}</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <div class="col-12 mb-3">
+            <div class="card shadow" style="cursor: pointer;">
+              <div class="card-body aplicadores">
+                <div class="card-title d-flex">
+                  <img src="/Persona-Icon.svg" alt="Persona Icon" class="img-fluid me-2" />
+                  <h2 class="fw-semibold">Aplicador: {{ ordenSeleccionada?.aplicador_id}}</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 mb-3">
+            <div class="card shadow" style="cursor: pointer;">
+              <div class="card-body maquinas">
+                <div class="card-title d-flex">
+                  <img src="/Maquina-Icon.svg" alt="Persona Icon" class="img-fluid me-2" />
+                  <h2 class="fw-semibold">Máquina</h2>
+                  <p>{{ordenSeleccionada?.id_maquina}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 mb-3">
+            <div class="card shadow" style="cursor: pointer;">
+              <div class="card-body tratamientos">
+                <div class="card-title d-flex">
+                  <img src="/Persona-Icon.svg" alt="Persona Icon" class="img-fluid me-2" />
+                  <h2 class="fw-semibold">Tratamiento</h2>
+                  <p>{{ordenSeleccionada?.nombre}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 mb-3">
+            <div class="card shadow" style="cursor: pointer;">
+              <div class="card-body Fecha">
+                <div class="card-title d-flex">
+                  <img src="/Persona-Icon.svg" alt="Persona Icon" class="img-fluid me-2" />
+                  <h2 class="fw-semibold">Fecha</h2>
+                  <p>{{ordenSeleccionada?.fecha_inicio}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+

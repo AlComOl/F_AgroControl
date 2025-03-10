@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import{ OrdenesService } from '../../../../services/ordenes.service';
+
+
+
 @Component({
   selector: 'app-orden-en-curso',
   imports: [CommonModule],
@@ -9,7 +12,7 @@ import{ OrdenesService } from '../../../../services/ordenes.service';
 })
 export class OrdenEnCursoComponent {
   ordenesCurso: any;
-
+  ordenSeleccionada:any;
   parcela:any;
   tarea:any;
   fecha_inicio:any;
@@ -17,5 +20,10 @@ export class OrdenEnCursoComponent {
   constructor(private ordenesService: OrdenesService) {
       this.ordenesService.getOrdenesCurso()
         .subscribe(result => this.ordenesCurso = result)
+  }
+
+  seleccionarOrdenCurso(orden: any) {
+    console.log(orden);
+    this.ordenSeleccionada = orden;
   }
 }
