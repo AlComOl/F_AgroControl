@@ -49,18 +49,17 @@
             </span>
           </div>
 
-          <div class="mt-5 w-100" id="cuadroAplicadores">
-            @for (parcela of parcelaSeleecionada; track parcela.id) {
+          <div class="mt-5 w-100" id="cuadroParcelas">
+            @for (parcela of parcelas; track parcela.id) {
             <div class="d-flex justify-content-around w-100 m-2">
-                <img src="ruta-a-tu-imagen.jpg" alt="Imagen de ejemplo" class="imagen-circular">
-                <label class="form-check-label w-100 d-flex align-items-center">
+              <img src="ruta-a-tu-imagen.jpg" alt="Imagen de ejemplo" class="imagen-circular">
+              <label class="form-check-label w-100 d-flex align-items-center">
                 {{ parcela.nombre }}
-                <input type="checkbox" class="ms-auto" [checked]="parcelaSeleecionada == parcela" (change)="revisarParcela(parcela)">
+                <input type="checkbox" class="ms-auto" [checked]="parcelaSeleecionada.includes(parcela)" (change)="revisarParcelas(parcela)">
               </label>
             </div>
-          }
-        </div>
-      </div>
+            }
+          </div>
       <div class="modal-footer d-flex justify-content-center align-items-center">
         <button type="button" class="btn mt-3" (click)="guardarCambios()">Guardar Cambios</button>
       </div>

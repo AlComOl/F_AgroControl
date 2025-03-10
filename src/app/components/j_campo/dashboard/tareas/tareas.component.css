@@ -1,45 +1,48 @@
-/* Contenedor general del card */
-container {
+
+
+/* Contenedor general */
+.container {
   display: flex;
-  text-align: center;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center; /* Alineación vertical */
-  gap: 10px; /* Controla el espacio entre los elementos */
+  align-items: center;
+  gap: 40px;
+  max-height: 100vh; /* Altura máxima para evitar que desborde */
+  overflow-y: auto; /* Scroll vertical si es necesario */
 
 }
 
-
+/* Tarjetas de órdenes */
 .card {
-  display: flex; /* Alinear imagen y contenido */
-  align-items: center; /* Centrado vertical */
-  background-color: #ffffff; /* Fondo blanco */
-  color: #2f4f4f; /* Verde oscuro */
-  width: 90%; /* Tamaño compacto */
-  max-width: 280px; /* Límite de ancho */
-  margin: 10px auto; /* Centrado */
-  padding: 10px; /* Espaciado */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  gap: 12px; /* Espaciado entre imagen y texto */
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  color: #2f4f4f;
+  width: 90%;
+  max-width: 280px;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  gap: 12px;
 }
 
-/* Imagen más grande y alineada con el título */
+/* Imagen en la tarjeta */
 .card-img-top {
-  width: 40px; /* Más grande */
-  height: 40px;
-  object-fit: contain; /* Evita distorsión */
-  flex-shrink: 0; /* No se reduce más */
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
-/* Cuerpo del card con el texto */
+/* Contenedor de texto en la tarjeta */
 .card-body {
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* Ocupa el espacio disponible */
+  flex-grow: 1;
 }
 
-/* Estilo del título con imagen al lado */
+/* Cabecera con título e imagen */
 .card-header {
   display: flex;
   align-items: center;
@@ -48,21 +51,28 @@ container {
   font-weight: bold;
 }
 
-/* Párrafos con información */
+/* Texto dentro de las tarjetas */
 .card-text {
   font-size: 0.85rem;
   margin-top: 5px;
-  color: #2f4f4f; /* Verde oscuro */
+  color: #2f4f4f;
 }
 
-/* Texto importante en negrita */
 .card-text strong {
   font-weight: bold;
   color: #2f4f4f;
 }
-h1{
+
+/* Título de la sección */
+h1 {
   text-align: center;
   padding: 20px;
 }
 
-
+/* Media query para pantallas pequeñas */
+@media (max-width: 576px) {
+  .card {
+    width: 100%; /* Ocupar todo el ancho disponible */
+    max-width: none; /* Sin límite de ancho */
+  }
+}

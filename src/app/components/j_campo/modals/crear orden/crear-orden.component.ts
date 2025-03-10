@@ -27,7 +27,7 @@ export class CrearOrdenComponent{
 
   parcelaSeleccionada: any = null;
   tareaSeleccionada: any = null;
-  aplicadoresSeleccionados: any[] = [];
+  aplicadoresSeleccionados: any=null;
   maquinaSeleccionada: any = null;
   tratamientoSeleccionado: any = null;
   fechaSeleccionada:string="";

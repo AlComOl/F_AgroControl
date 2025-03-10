@@ -10,7 +10,7 @@ export class TratamientoService {
   constructor(private http: HttpClient) { }
 
   getTratamientoAll(): Observable <Parcela[]>{
-    return this.http.get<Parcela[]>('http://localhost:80/api/tratamiento', );
+    return this.http.get<Parcela[]>('http://127.0.0.1:80/api/tratamiento', );
   }
 
 }

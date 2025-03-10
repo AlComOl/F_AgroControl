@@ -11,7 +11,10 @@ export class ParcelaService {
   constructor(private http: HttpClient) { }
 
   getParcelasAll(): Observable <Parcela[]>{
-    return this.http.get<Parcela[]>('http://localhost:80/api/parcelas', );
+    return this.http.get<Parcela[]>('http://127.0.0.1:80/api/parcelas', );
   }
 
 }
+
+
+

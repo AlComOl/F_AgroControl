@@ -1,7 +1,3 @@
- body{
-  padding-top: 25px;/*baja el dashdorad para que no lo tape el header*/
-}
-
 
 .circle {
   width: 50vw; /* Tamaño relativo al ancho de la pantalla */

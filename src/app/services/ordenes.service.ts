@@ -18,19 +18,19 @@ export class OrdenesService {
   }
 
   getOrdenesPendientes() {
-    return this.http.get('http://localhost/api/ordenesPendientes');
+    return this.http.get('http://127.0.0.0:80/api/ordenesPendientes');
   }
 
   getOrdenesCurso() {
-    return this.http.get('http://localhost/api/ordenesCurso');
+    return this.http.get('http://127.0.0.1:80/api/ordenesCurso');
   }
 
   getOrdenesPausa() {
-    return this.http.get('http://127.0.0.1:8000/api/ordenesPausadas');
+    return this.http.get('http://127.0.0.1:80/api/ordenesPausadas');
   }
 
   getOrdenesTerminadas() {
-    return this.http.get('http://127.0.0.1:8000/api/ordenesTerminadas');
+    return this.http.get('http://127.0.0.1:80/api/ordenesTerminadas');
   }
 }
 

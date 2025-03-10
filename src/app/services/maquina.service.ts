@@ -12,7 +12,7 @@ export class MaquinaService {
 
 
   getMaquinas(): Observable <Maquina[]>{
-        return this.http.get<Maquina[]>('http://localhost:80/api/maquinas', );
+        return this.http.get<Maquina[]>('http://127.0.0.1:80/api/maquinas', );
 
   }
 
