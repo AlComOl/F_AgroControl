@@ -11,17 +11,17 @@ export class IncidenciasService {
 
 
   getIncidenciasPersonal() {
-    return this.http.get('http://0.0.0.0/api/incidenciasPersonal');
+    return this.http.get('http://127.0.0.1/api/incidenciasPersonal');
   }
 
   // Método para obtener incidencias de tipo máquina
   getIncidenciasMaquina(){
-    return this.http.get('http://0.0.0.0/api/incidenciasMaquina');
+    return this.http.get('http://127.0.0.1/api/incidenciasMaquina');
   }
 
   // Método para obtener incidencias de tipo stock
   getIncidenciasStock() {
-    return this.http.get('http://0.0.0.0/api/incidenciasStock');
+    return this.http.get('http://127.0.0.1/api/incidenciasStock');
   }
 }
 

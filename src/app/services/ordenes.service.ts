@@ -7,7 +7,7 @@ import { Orden } from '../models/Orden';
   providedIn: 'root'
 })
 export class OrdenesService {
-  private apiUrl = 'http://0.0.0.0/api/ordenes';
+  private apiUrl = 'http://127.0.0.1/api/ordenes';
 
   constructor(private http: HttpClient) {}
 
@@ -19,24 +19,24 @@ export class OrdenesService {
   }
 
   getOrdenesPendientes() {
-    return this.http.get('http://0.0.0.0/api/ordenesPendientes');
+    return this.http.get('http://127.0.0.1/api/ordenesPendientes');
   }
 
   getOrdenesCurso() {
-    return this.http.get('http://0.0.0.0/api/ordenesCurso');
+    return this.http.get('http://127.0.0.1/api/ordenesCurso');
   }
 
   getOrdenesPausa() {
-    return this.http.get('http://0.0.0.0/api/ordenesPausadas');
+    return this.http.get('http://127.0.0.1/api/ordenesPausadas');
   }
 
   getOrdenById(id: any) {
     console.log(id);
-    return this.http.get<Orden[]>('http://0.0.0.0/api/orden/'+id);
+    return this.http.get<Orden[]>('http://127.0.0.1/api/orden/'+id);
   }
 
   getOrdenesTerminadas() {
-    return this.http.get('http://0.0.0.0/api/ordenesTerminadas');
+    return this.http.get('http://127.0.0.1/api/ordenesTerminadas');
   }
 }
 

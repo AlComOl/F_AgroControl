@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class QuimicosService {
 
-  private apiUrl = 'http://0.0.0.0/api/quimicos';
+  private apiUrl = 'http://127.0.0.1/api/quimicos';
 
   constructor(private http: HttpClient) { }
 

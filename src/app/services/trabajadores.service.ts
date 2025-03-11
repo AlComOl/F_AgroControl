@@ -12,11 +12,11 @@ export class TrabajadoresService {
   constructor(private http: HttpClient) { }
 
   obtenerAplicadores(){
-    return this.http.get<User[]>('http://0.0.0.0/api/aplicadores')
+    return this.http.get<User[]>('http://127.0.0.1/api/aplicadores')
   }
 
   obtenerAplicadorporId(id:any){
-    return this.http.get<User>('http://0.0.0.0/api/aplicador/'+id);
+    return this.http.get<User>('http://127.0.0.1/api/aplicador/'+id);
   }
 
 }
