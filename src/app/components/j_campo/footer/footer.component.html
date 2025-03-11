@@ -5,9 +5,9 @@
     <div>
       <button class="close-btn" (click)="closeIncidenciaMenu()">X</button>
       <h1 >Incidencias</h1>
-      <h3 [routerLink]="['j_campo/incidencias/tipo-personal']" style="cursor: pointer;">Personal</h3>
-      <h3 [routerLink]="['j_campo/incidencias/tipo-maquina']" style="cursor: pointer;">Máquina</h3>
-      <h3 [routerLink]="['j_campo/incidencias/tipo-stock']" style="cursor: pointer;">Stock</h3>
+      <h3 [routerLink]="['incidencias/tipo-personal']" style="cursor: pointer;">Personal</h3>
+      <h3 [routerLink]="['incidencias/tipo-maquina']" style="cursor: pointer;">Máquina</h3>
+      <h3 [routerLink]="['incidencias/tipo-stock']" style="cursor: pointer;">Stock</h3>
     </div>
   </div>
 
@@ -16,10 +16,10 @@
     <div>
       <button class="close-btn" (click)="closeOrdenMenu()">X</button>
       <h1>Ordenes</h1>
-      <h3 class="desMenu1" [routerLink]="['/j_campo/orden/orden-curso']" style="cursor: pointer;">En curso</h3>
-      <h3 class="desMenu1" [routerLink]="['/j_campo/orden/orden-pendientes']" style="cursor: pointer;">Pendientes</h3>
-      <h3 class="desMenu1" [routerLink]="['/j_campo/orden/orden-pausadas']" style="cursor: pointer;">Pausadas</h3>
-      <h3 class="desMenu1" [routerLink]="['/j_campo/orden/orden-terminadas']" style="cursor: pointer;">Terminadas</h3>
+      <h3 class="desMenu1" [routerLink]="['orden/orden-curso']" style="cursor: pointer;">En curso</h3>
+      <h3 class="desMenu1" [routerLink]="['orden/orden-pendientes']" style="cursor: pointer;">Pendientes</h3>
+      <h3 class="desMenu1" [routerLink]="['orden/orden-pausadas']" style="cursor: pointer;">Pausadas</h3>
+      <h3 class="desMenu1" [routerLink]="['orden/orden-terminadas']" style="cursor: pointer;">Terminadas</h3>
     </div>
   </div>
 
@@ -29,11 +29,11 @@
       <div>
         <button class="close-btn" (click)="closeCuentaMenu()">X</button>
         <h1>Menú</h1>
-        <h3 class="desMenu1" [routerLink]="['/j_campo/cuenta']" style="cursor: pointer;">Cuenta</h3>
-        <h3 class="desMenu1" [routerLink]="['/j_campo/mensajes']" style="cursor: pointer;">Mensajes</h3>
-        <h3 class="desMenu1" [routerLink]="['/j_campo/tratamientos']" style="cursor: pointer;">Tratamientos</h3>
-        <h3 class="desMenu1" [routerLink]="['/j_campo/almacen']" style="cursor: pointer;">Almacén</h3>
-        <h3 class="desMenu1" [routerLink]="['/j_campo/salir']" style="cursor: pointer;">Salir</h3>
+        <h3 class="desMenu1" [routerLink]="['cuenta']" style="cursor: pointer;">Cuenta</h3>
+        <h3 class="desMenu1" [routerLink]="['mensajes']" style="cursor: pointer;">Mensajes</h3>
+        <h3 class="desMenu1" [routerLink]="['tratamientos']" style="cursor: pointer;">Tratamientos</h3>
+        <h3 class="desMenu1" [routerLink]="['almacen']" style="cursor: pointer;">Almacén</h3>
+        <h3 class="desMenu1" [routerLink]="['salir']" style="cursor: pointer;">Salir</h3>
       </div>
     </div>
 
@@ -43,14 +43,14 @@
 
     <!-- Botón Home -->
     <div class="home">
-      <div class="btn" routerLink="j_campo/dashboard">
+      <div class="btn" routerLink="dashboard">
         <img src="/Home.svg" alt="home" />
       </div>
     </div>
 
     <!-- Botón Calendario -->
     <div class="calendar">
-      <div class="btn" routerLink="jefe_campo/calendario">
+      <div class="btn" routerLink="calendario">
         <img src="/Calendar.svg" alt="calendar" />
       </div>
     </div>

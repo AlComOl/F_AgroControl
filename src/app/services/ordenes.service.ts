@@ -19,7 +19,7 @@ export class OrdenesService {
   }
 
   getOrdenesPendientes() {
-    return this.http.get('http://127.0.0.1:80/api/ordenesPendientes');
+    return this.http.get('http://0.0.0.0/api/ordenesPendientes');
   }
 
   getOrdenesCurso() {
@@ -27,7 +27,7 @@ export class OrdenesService {
   }
 
   getOrdenesPausa() {
-    return this.http.get('http://127.0.0.1:80/api/ordenesPausadas');
+    return this.http.get('http://0.0.0.0/api/ordenesPausadas');
   }
 
   getOrdenById(id: any) {
@@ -36,7 +36,7 @@ export class OrdenesService {
   }
 
   getOrdenesTerminadas() {
-    return this.http.get('http://127.0.0.1:80/api/ordenesTerminadas');
+    return this.http.get('http://0.0.0.0/api/ordenesTerminadas');
   }
 }
 
