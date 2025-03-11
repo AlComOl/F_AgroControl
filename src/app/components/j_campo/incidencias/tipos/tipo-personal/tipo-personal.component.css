@@ -4,6 +4,7 @@
   align-items: center;          /* Centrar verticalmente (si es necesario) */
   flex-direction: column;       /* Asegurar que los hijos se alineen en columna */
   margin-top: 100px;            /* Espacio arriba, ajusta según necesites */
+
 }
 tr th{
     color: #01533E;
@@ -24,6 +25,29 @@ h1{
 tr{
   color: #01533E;
 
+
+
+
+
   text-align: center;
+
+
+
 }
 
+
+
+.btn-primary{
+
+    background-color: #01533E !important;
+    border-color: #01533E;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    transition: background-color 0.3s;
+
+}

@@ -1,24 +1,24 @@
-<div class="container">
+<div class="d-flex justify-content-center align-items-center" style="width: 120%;">
+  <div class="container">
   <div class="row">
     <div class="col-md-12 text-center">
       <h1>Incidencias Personales</h1>
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Orden</th>
+            <th>Aplicador</th>
             <th>Descripción</th>
             <th>Fecha </th>
           </tr>
         </thead>
         <tbody >
-          @for(IncidenciaP of incidenciasPersonal; track IncidenciaP.id){
-          <tr data-bs-toggle="modal" data-bs-target="#incidenciaPersonaShow" (click)="seleccionarIncidenciaP(IncidenciaP)">
-            <td>{{ IncidenciaP.orden_id }}</td>
-            <td>{{ IncidenciaP.descripcion }}</td>
-            <td>{{ IncidenciaP.fecha }}</td>
+          <tr *ngFor="let incidencia of incidenciasPersonal" data-bs-toggle="modal" data-bs-target="#incidenciaPersonaShow" (click)="seleccionarIncidenciaP(incidencia)">
+            <td>{{buscarPersona(incidencia.user_id)[0].nombre}}</td> <!-- Llamamos a buscarPersona para obtener el nombre -->
+            <td>{{ incidencia.descripcion }}</td>
+            <td>{{ incidencia.fecha }}</td>
           </tr>
-        }
-        </tbody>
+
+          </tbody>
       </table>
     </div>
   </div>
@@ -32,81 +32,83 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
-
         <div class="modal-body">
-          <div class="col-12 mb-3">
-            <div class="card shadow" style="cursor: pointer;">
-              <div class="card-body parcelas">
-                <div class="card-title d-flex">
-                  <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
-                 <h2 class="fw-semibold"> Parcela:  {{ordenSeleccionada?.persona}}</h2>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="row justify-content-center">
 
-          <div class="modal-body">
             <div class="col-12 mb-3">
               <div class="card shadow" style="cursor: pointer;">
-                <div class="card-body tareas">
+                <div class="card-body parcelas">
                   <div class="card-title d-flex">
-                    <img src="/Tarea-Icon.svg" alt="Parcela Icon" class="img-fluid me-2" />
-                   <h2 class="fw-semibold"> Tarea:  {{ordenSeleccionada?.tarea}}</h2>
+                    <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
+                  <h2 class="fw-semibold"> Parcela:  {{ordenSeleccionada?.parcela.nombre}}</h2>
                   </div>
                 </div>
               </div>
             </div>
 
-          <div class="col-12 mb-3">
-            <div class="card shadow" style="cursor: pointer;">
-              <div class="card-body aplicadores">
-                <div class="card-title d-flex">
-                  <img src="/Persona-Icon.svg" alt="Persona Icon" class="img-fluid me-2" />
-                  <h2 class="fw-semibold">Aplicador: {{ ordenSeleccionada?.aplicador_id}}</h2>
+            <div class="modal-body">
+              <div class="col-12 mb-3">
+                <div class="card shadow" style="cursor: pointer;">
+                  <div class="card-body tareas">
+                    <div class="card-title d-flex">
+                      <img src="/Tarea-Icon.svg" alt="Parcela Icon" class="img-fluid me-2" />
+                    <h2 class="fw-semibold"> Tarea:  {{ordenSeleccionada?.tarea}}</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="col-12 mb-3">
+              <div class="card shadow" style="cursor: pointer;">
+                <div class="card-body aplicadores">
+                  <div class="card-title d-flex">
+                    <img src="/Persona-Icon.svg" alt="Persona Icon" class="img-fluid me-2" />
+                    <h2 class="fw-semibold">Aplicador: {{ordenSeleccionada?.aplicadores.nombre}} </h2>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-12 mb-3">
-            <div class="card shadow" style="cursor: pointer;">
-              <div class="card-body maquinas">
-                <div class="card-title d-flex">
-                  <img src="/Maquina-Icon.svg" alt="Persona Icon" class="img-fluid me-2" />
-                  <h2 class="fw-semibold">Máquina</h2>
-                  <p>{{ordenSeleccionada?.id_maquina}}</p>
+            <div class="col-12 mb-3">
+              <div class="card shadow" style="cursor: pointer;">
+                <div class="card-body maquinas">
+                  <div class="card-title d-flex">
+                    <img src="/Maquina-Icon.svg" alt="Persona Icon" class="img-fluid me-2" />
+                    <h2 class="fw-semibold">Máquina</h2>
+                    <p>{{ordenSeleccionada?.id_maquina}}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-12 mb-3">
-            <div class="card shadow" style="cursor: pointer;">
-              <div class="card-body tratamientos">
-                <div class="card-title d-flex">
-                  <img src="/Persona-Icon.svg" alt="Persona Icon" class="img-fluid me-2" />
-                  <h2 class="fw-semibold">Tratamiento</h2>
-                  <p>{{ordenSeleccionada?.nombre}}</p>
+            <div class="col-12 mb-3">
+              <div class="card shadow" style="cursor: pointer;">
+                <div class="card-body tratamientos">
+                  <div class="card-title d-flex">
+                    <h2 class="fw-semibold">Asunto {{incidenciaSeleccionada?.descripcion}}</h2>
+                    <p></p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-12 mb-3">
-            <div class="card shadow" style="cursor: pointer;">
-              <div class="card-body Fecha">
-                <div class="card-title d-flex">
-                  <img src="/Persona-Icon.svg" alt="Persona Icon" class="img-fluid me-2" />
-                  <h2 class="fw-semibold">Fecha</h2>
-                  <p>{{ordenSeleccionada?.fecha_inicio}}</p>
+            <div class="col-12 mb-3">
+              <div class="card shadow" style="cursor: pointer;">
+                <div class="card-body Fecha">
+                  <div class="card-title d-flex">
+                    <h2 class="fw-semibold">Fecha: {{ordenSeleccionada?.fecha_inicio}}</h2>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Resolver</button>
+      </div>
+
       </div>
     </div>
   </div>
-
+</div>

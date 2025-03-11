@@ -36,10 +36,10 @@
           <div class="mt-5 w-100" id="cuadroParcelas">
             @for (parcela of parcelas; track parcela.id) {
             <div class="d-flex justify-content-around w-100 m-2">
-              <img src="ruta-a-tu-imagen.jpg" alt="Imagen de ejemplo" class="imagen-circular">
+              <img src="/Parcela-Icon1.svg" alt="Imagen de ejemplo">
               <label class="form-check-label w-100 d-flex align-items-center">
                 {{ parcela.nombre }}
-                <input type="checkbox" class="ms-auto" [checked]="parcelaSeleecionada.includes(parcela)" (change)="revisarParcelas(parcela)">
+                <input type="checkbox" class="ms-auto" [checked]="parcelaSeleecionada == parcela" (change)="revisarParcelas(parcela)">
               </label>
             </div>
             }

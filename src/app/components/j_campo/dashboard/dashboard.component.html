@@ -1,6 +1,6 @@
   <!-- Contenedor Principal -->
    <br>
-  <div class="container py-5">
+  <div class="py-5 mb-5 overflow-auto">
     <!-- Tarjeta Principal -->
     <div class="card mx-auto main-card">
       <!-- Fecha -->
@@ -10,11 +10,11 @@
       <h2 class="text-center text-brown mb-3 title">Tareas</h2>
 
       <!-- Gráfico -->
-      <div class="text-center mb-3">
+      <div class="text-center mb-3" >
         <div class="circle">
-          <span class="center-text">50</span>
+          <span class="center-text" style="font-size: 16px !important;" >50</span>
         </div>
-        <p class="total-tasks mb-5">Total tareas</p>
+        <p class="total-tasks mb-5" style="font-size: 16px !important;">Total tareas</p>
       </div>
 
       <!-- Leyenda -->
@@ -38,7 +38,27 @@
       </div>
     </div>
 
-    <app-tareas></app-tareas>
+    <div class="row overflow-auto">
+      <div class="col-md-12">
+        <h1>Órdenes en curso</h1>
+        <div class="row">
+          <div class="col-md-4" *ngFor="let ordenCurso of ordenesCurso">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <div class="container d-flex align-items-center gap-3">
+                  <img src="/Parcela-Icon.svg" class="parcela-img" alt="Img Parcela">
+                  <h5 class="card-title">{{ ordenCurso.parcela.nombre }}</h5>
+                </div>
+                <p class="card-text">Tarea: {{ ordenCurso.tarea }}</p>
+                <p class="card-text">Fecha de inicio: {{ ordenCurso.fecha_inicio }}</p>
+                <p class="card-text">Aplicador:{{ ordenesCurso.aplicador_id }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  </div> 
+
+  </div>
 

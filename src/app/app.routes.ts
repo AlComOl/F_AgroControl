@@ -31,25 +31,25 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
 
 export const routes: Routes = [
   {
-    path: 'login',
+    path: '',
     component: AuthLayoutComponent,
     children: [{ path: '', component: LoginComponent }]
   },
   {
-    path: '',
+    path: 'j_campo',
     component: MainLayoutComponent,
     children: [
 
-          { path: 'j_campo/dashboard', component: DashboardComponent },
-          { path: 'j_campo/notificaciones', component: NotificacionesComponent },
-          { path: 'j_campo/calendario', component: CalendarioComponent },
-          { path: 'j_campo/menu', component: MenuComponent },
-          { path: 'j_campo/crear-orden', component: CrearOrdenComponent },
-          { path: 'j_campo/modal-crear-parcela', component: ModalCrearParcelaComponent },
-          { path: 'j_campo/modal-crear-tratamiento', component: ModalCrearTratamientoComponent },
-          { path: 'j_campo/modal-crear-tarea', component: ModalCrearTareaComponent },
+          { path: 'dashboard', component: DashboardComponent },
+          { path: 'notificaciones', component: NotificacionesComponent },
+          { path: 'calendario', component: CalendarioComponent },
+          { path: 'menu', component: MenuComponent },
+          { path: 'crear-orden', component: CrearOrdenComponent },
+          { path: 'modal-crear-parcela', component: ModalCrearParcelaComponent },
+          { path: 'modal-crear-tratamiento', component: ModalCrearTratamientoComponent },
+          { path: 'modal-crear-tarea', component: ModalCrearTareaComponent },
           {
-            path: 'j_campo/incidencias',
+            path: 'incidencias',
             children: [
               { path: 'tipo-personal', component: TipoPersonalComponent },
               { path: 'tipo-maquina', component: TipoMaquinaComponent },
@@ -58,7 +58,7 @@ export const routes: Routes = [
           },
 
           {
-            path: 'j_campo/orden',
+            path: 'orden',
             children: [
               { path: 'orden-curso', component: OrdenEnCursoComponent },
               { path: 'orden-pausadas', component: OrdenPausadasComponent },

@@ -44,4 +44,11 @@
   align-items: center;
   margin-bottom: 10px;
 }
-
+.btn-primary {
+  background-color: #532301 !important;
+  border-color: #532301 !important;
+}
+.btn-primary:hover {
+  background-color: #633a1c !important;
+  border-color: #532301 !important;
+}
