@@ -38,11 +38,12 @@
 .fecha {
   max-height: 120px !important;
 }
-
-.parcelas, .tareas, .aplicadores, .maquinas {
+.tareas, .aplicadores, .maquinas {}
+.parcelas{
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+
 }
 .btn-primary {
   background-color: #532301 !important;

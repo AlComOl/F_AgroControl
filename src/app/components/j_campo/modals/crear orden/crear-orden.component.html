@@ -1,15 +1,15 @@
 <div class="container">
   <h1 class="modal-title w-100 text-center pb-3 mt-4">Crear Orden</h1>
   <div class="row">
-    <div class="col-12 mb-3">
-      <div class="card shadow" (click)="abrirModalParcela()" style="cursor: pointer;">
-        <div class="card-body parcelas">
+    <div  class="col-12 mb-3">
+      <div class="card shadow"  [ngStyle]="{'background-color': parcelaSeleccionada ? 'rgba(0, 66, 21, 0.08)' : '#ffffff'}" (click)="abrirModalParcela()" style="cursor: pointer;">
+        <div class="card-body parcelas ">
           <div class="card-title d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
               <img src="/Parcela-Icon1.svg" alt="Parcela Icon" class="img-fluid me-2" />
               <h2 class="fw-semibold ms-3 mt-2">Parcela</h2>
             </div>
-            <h3 class="mb-0">{{ parcelaSeleccionada?.nombre || 'No seleccionada' }}</h3>
+            <h3 class="mb-0" [ngClass]="{'fw-bold': parcelaSeleccionada}">{{ parcelaSeleccionada?.nombre || 'No seleccionada' }}</h3>
           </div>
           <app-modal-crear-parcela #modalVerParcelas (parcelaGuardada)="recibirParcela($event)"></app-modal-crear-parcela>
         </div>

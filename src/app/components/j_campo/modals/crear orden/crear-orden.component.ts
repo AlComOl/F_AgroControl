@@ -27,7 +27,7 @@ import * as bootstrap from 'bootstrap';
   styleUrls: ['./crear-orden.component.css']
 })
 export class CrearOrdenComponent{
-
+  colorFlag="gren";
   parcelaSeleccionada: any = null;
   tareaSeleccionada: any = null;
   aplicadoresSeleccionados: any=null;
@@ -59,6 +59,9 @@ export class CrearOrdenComponent{
 recibirParcela(parcela: Parcela) {
   console.log('Recibido en el padre:', parcela);  // Verifica el objeto recibido
   this.parcelaSeleccionada = parcela;
+  if(parcela){
+    this.colorFlag="rgb(118, 66, 46)";
+  }
 }
 
 
@@ -81,6 +84,7 @@ recibirMaquina(maquina: any){
 recibirTratamiento(tratamiento: any) {
   console.log('Recibido en el padre:', tratamiento);
   this.tratamientoSeleccionado = tratamiento;
+
 }
 recibirTarea(tarea: any) {
   console.log('Recibido en el padre:', tarea);
