@@ -31,14 +31,14 @@ export class FooterComponent {
 
   }
 
-  OrdenMenu(){
-    this.isIncidenciaMenuVisible = false;
+  // OrdenMenu(){
+  //   this.isIncidenciaMenuVisible = false;
 
-    this.isOrdenMenuVisible = !this.isIncidenciaMenuVisible;
-  }
-  closeOrdenMenu(){
-    this.isOrdenMenuVisible = false;
-  }
+  //   this.isOrdenMenuVisible = !this.isIncidenciaMenuVisible;
+  // }
+  // closeOrdenMenu(){
+  //   this.isOrdenMenuVisible = false;
+  // }
 
   Menu() {
     this.isCuentaMenuVisible = !this.isCuentaMenuVisible;

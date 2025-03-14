@@ -27,6 +27,7 @@ import { AplicadorGuard } from './guards/guard-aplicador.guards';
 import { LoginComponent } from './components/login/login.component'
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
+import { OrdenesComponent } from './components/j_campo/orden/ordenes/ordenes.component';
 
 
 export const routes: Routes = [
@@ -51,6 +52,7 @@ export const routes: Routes = [
           {
             path: 'incidencias',
             children: [
+
               { path: 'tipo-personal', component: TipoPersonalComponent },
               { path: 'tipo-maquina', component: TipoMaquinaComponent },
               { path: 'tipo-stock', component: TipoStockComponent }
@@ -60,6 +62,7 @@ export const routes: Routes = [
           {
             path: 'orden',
             children: [
+              {path: 'ordenes', component:OrdenesComponent},
               { path: 'orden-curso', component: OrdenEnCursoComponent },
               { path: 'orden-pausadas', component: OrdenPausadasComponent },
               { path: 'orden-pendientes', component: OrdenPendientesComponent },

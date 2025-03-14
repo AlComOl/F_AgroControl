@@ -12,7 +12,7 @@
   </div>
 
 <!-- ordenes -->
-  <div id="menuD" [hidden]="!isOrdenMenuVisible">
+  <!-- <div id="menuD" [hidden]="!isOrdenMenuVisible">
     <div>
       <button class="close-btn" (click)="closeOrdenMenu()">X</button>
       <h1>Ordenes</h1>
@@ -21,7 +21,7 @@
       <h3 class="desMenu1" [routerLink]="['orden/orden-pausadas']" style="cursor: pointer;">Pausadas</h3>
       <h3 class="desMenu1" [routerLink]="['orden/orden-terminadas']" style="cursor: pointer;">Terminadas</h3>
     </div>
-  </div>
+  </div> -->
 
 
    <!--  Menu -->
@@ -64,7 +64,8 @@
 
     <!-- Botón Orden -->
     <div class="orden">
-      <div class="btn" (click)="OrdenMenu()">
+      <!-- <div class="btn" (click)="OrdenMenu()"> -->
+        <div class="btn"  [routerLink]="['orden/ordenes']">
         <img src="/tareas.svg" alt="ordenes" />
       </div>
     </div>
