@@ -11,11 +11,11 @@
           </tr>
         </thead>
         <tbody >
-          @for(ordenTerminada of ordenesTerminadas; track ordenTerminada.id){
-          <tr data-bs-toggle="modal" data-bs-target="#ordenTerminadaShow" (click)="seleccionarOrdenTerminada(ordenTerminada)">
-            <td>{{ ordenTerminada.parcela.nombre }}</td>
-            <td>{{ ordenTerminada.tarea }}</td>
-            <td>{{ ordenTerminada.fecha_inicio }}</td>
+          @for(ordenCurso of ordenesTerminadas; track ordenCurso.id){
+          <tr data-bs-toggle="modal" data-bs-target="#ordenTerminadaShow" (click)="seleccionarOrdenTerminada(ordenCurso)">
+            <td>{{ ordenCurso.parcela.nombre }}</td>
+            <td>{{ ordenCurso.tarea }}</td>
+            <td>{{ ordenCurso.fecha_inicio }}</td>
           </tr>
         }
         </tbody>

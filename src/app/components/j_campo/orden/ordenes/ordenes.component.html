@@ -1,3 +1,32 @@
-<br><br><br><br><br>
+<br><br><br><br>
+<!-- ordenes -->
+  <!-- <div id="menuD" [hidden]="!isOrdenMenuVisible">
+    <div>
+      <button class="close-btn" (click)="closeOrdenMenu()">X</button>
+      <h1>Ordenes</h1>
+      <h3 class="desMenu1" [routerLink]="['orden/orden-curso']" style="cursor: pointer;">En curso</h3>
+      <h3 class="desMenu1" [routerLink]="['orden/orden-pendientes']" style="cursor: pointer;">Pendientes</h3>
+      <h3 class="desMenu1" [routerLink]="['orden/orden-pausadas']" style="cursor: pointer;">Pausadas</h3>
+      <h3 class="desMenu1" [routerLink]="['orden/orden-terminadas']" style="cursor: pointer;">Terminadas</h3>
+    </div>
+  </div> -->
 
-<p>ordenes works!</p>
+
+<nav class="navbar navbar-expand">
+  <div class="container-fluid">
+    <ul class="navbar-nav ">
+      <li class="nav-item ">
+          <button class="btn btn-outline-success me-2" [routerLink]="['./orden/orden-curso']" type="button ">Encurso</button>
+      </li>
+      <li class="nav-item ">
+        <button class="btn btn-outline-success me-2" type="button">Pendientes</button>
+      </li>
+      <li class="nav-item ">
+         <button class="btn btn-outline-success me-2" type="button">Pausadas</button>
+      </li>
+      <li class="nav-item ">
+         <button class="btn btn-outline-success me-2" type="button">Terminadas</button>
+      </li>
+    </ul>
+  </div>
+</nav>
