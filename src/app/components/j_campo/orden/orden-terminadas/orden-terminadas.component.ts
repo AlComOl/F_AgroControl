@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import{ OrdenesService } from '../../../../services/ordenes.service';
+import { OrdenesComponent } from "../ordenes/ordenes.component";
 
 @Component({
   selector: 'app-orden-terminadas',
-  imports: [CommonModule],
+  imports: [CommonModule, OrdenesComponent],
   templateUrl: './orden-terminadas.component.html',
   styleUrl: './orden-terminadas.component.css'
 })

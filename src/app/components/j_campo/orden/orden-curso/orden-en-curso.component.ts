@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import{ OrdenesService } from '../../../../services/ordenes.service';
+import { OrdenesComponent } from "../ordenes/ordenes.component";
 
 
 
 @Component({
   selector: 'app-orden-en-curso',
-  imports: [CommonModule],
+  imports: [CommonModule, OrdenesComponent],
   templateUrl: './orden-en-curso.component.html',
   styleUrl: './orden-en-curso.component.css'
 })

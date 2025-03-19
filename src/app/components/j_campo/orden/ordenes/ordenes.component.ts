@@ -26,6 +26,7 @@ export class OrdenesComponent {
       console.log(orden);
       this.ordenSeleccionada = orden;
     }
+    
 
     testClick() {
       console.log("¡Botón clickeado!");

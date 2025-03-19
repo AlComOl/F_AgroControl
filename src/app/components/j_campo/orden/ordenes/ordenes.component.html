@@ -16,17 +16,18 @@
   <div class="container-fluid">
     <ul class="navbar-nav ">
       <li class="nav-item ">
-          <button class="btn btn-outline-success me-2" [routerLink]="['./orden/orden-curso']" type="button ">Encurso</button>
+          <button class="btn btn-outline-success me-2" [routerLink]="['/j_campo/orden/orden-curso'] ">Encurso</button>
       </li>
       <li class="nav-item ">
-        <button class="btn btn-outline-success me-2" type="button">Pendientes</button>
+        <button class="btn btn-outline-success me-2" [routerLink]="['/j_campo/orden/orden-pendientes'] " type="button">Pendientes</button>
       </li>
       <li class="nav-item ">
-         <button class="btn btn-outline-success me-2" type="button">Pausadas</button>
+         <button class="btn btn-outline-success me-2" [routerLink]="['/j_campo/orden/orden-pausadas'] " type="button">Pausadas</button>
       </li>
       <li class="nav-item ">
-         <button class="btn btn-outline-success me-2" type="button">Terminadas</button>
+         <button class="btn btn-outline-success me-2" [routerLink]="['/j_campo/orden/orden-terminadas'] " type="button">Terminadas</button>
       </li>
     </ul>
   </div>
 </nav>
+
