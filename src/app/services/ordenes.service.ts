@@ -38,6 +38,10 @@ export class OrdenesService {
   getOrdenesTerminadas() {
     return this.http.get('http://127.0.0.1/api/ordenesTerminadas');
   }
+
+  getOrdenesTodas(){
+    return this.http.get('http://127.0.0.1/api/ordenesTodas');
+  }
 }
 
 

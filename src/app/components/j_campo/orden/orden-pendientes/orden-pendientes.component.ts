@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import{ OrdenesService } from '../../../../services/ordenes.service';
-import { OrdenesComponent } from '../ordenes/ordenes.component';
+import { OrderFilterComponent } from "../order-filter/order-filter.component";
 
 
 
 @Component({
   selector: 'app-orden-pendientes',
-  imports: [CommonModule,OrdenesComponent],
+  imports: [CommonModule, OrderFilterComponent],
   templateUrl: './orden-pendientes.component.html',
   styleUrl: './orden-pendientes.component.css'
 })

@@ -1,33 +1,4 @@
-.container {
-  display: flex;                /* Usar flexbox para centrar */
-  justify-content: center;      /* Centrar horizontalmente */
-  align-items: center;          /* Centrar verticalmente (si es necesario) */
-  flex-direction: column;       /* Asegurar que los hijos se alineen en columna */
-  margin-top: 100px;            /* Espacio arriba, ajusta según necesites */
+
+body{
+  padding-top: 80px;
 }
-tr th{
-    color: #01533E;
-    font-size: 20px;
-    text-align: center;
-}
-
-
-h1{
-    color: #532301;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom:50px;
-    padding: 0;
-    text-align: center;
-}
-
-tr{
-  color: #01533E;
-
-  text-align: center;
-}
-
-/* .parcelas,.tares, .aplicadores, .maquina, .tratamiento, .fecha{
-
-
-} */

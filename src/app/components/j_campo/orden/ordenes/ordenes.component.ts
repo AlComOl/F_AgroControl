@@ -1,34 +1,39 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OrdenesService } from '../../../../services/ordenes.service';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { OrderFilterComponent } from '../order-filter/order-filter.component';
 
 @Component({
   selector: 'app-ordenes',
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule,RouterModule,OrderFilterComponent],
   templateUrl: './ordenes.component.html',
   styleUrl: './ordenes.component.css'
 })
 export class OrdenesComponent {
-
-  ordenesCurso: any;
+  mostrarId: boolean=true;
+  ordenesTodas: any;
   ordenSeleccionada:any;
   parcela:any;
   tarea:any;
   fecha_inicio:any;
+  todasVisible=true;
 
-  constructor(private ordenesService: OrdenesService) {
-        this.ordenesService.getOrdenesCurso()
-          .subscribe(result => this.ordenesCurso = result)
+  constructor(private ordenesService: OrdenesService, private router:Router) {
+        this.ordenesService.getOrdenesTodas()
+          .subscribe(result => this.ordenesTodas = result)
     }
 
-    ShowOrdenesCurso(orden: any) {
-      console.log(orden);
-      this.ordenSeleccionada = orden;
-    }
-    
+    // ShowOrdenesCurso(orden: any) {
+    //   console.log(orden);
+    //   this.ordenSeleccionada = orden;
+    // }
 
-    testClick() {
-      console.log("¡Botón clickeado!");
+    seleccionarTodasOrdenes(ordenTodas:any){
+       console.log(ordenTodas);
+       this.ordenSeleccionada = ordenTodas;
     }
+
+
+
 }
