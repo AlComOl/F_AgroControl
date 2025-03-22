@@ -75,7 +75,7 @@
             <img src="/Tratamiento-Icon.svg" alt="Tratamiento Icon" class="img-fluid me-2" />
             <h2 class="fw-bold ms-3 mt-2">Tratamiento</h2>
           </div>
-          <h3 class="mb-0" [ngClass]="{'fw-bold': tratamientoSeleccionado?.nombre}">{{tratamientoSeleccionado?.nombre}}</h3>      
+          <h3 class="mb-0" [ngClass]="{'fw-bold': tratamientoSeleccionado?.nombre}">{{tratamientoSeleccionado?.nombre}}</h3>
         </div>
         <app-modal-crear-tratamiento #modalVerTratamiento (tratamientoGuardado)="recibirTratamiento($event)"></app-modal-crear-tratamiento>
       </div>
@@ -89,6 +89,10 @@
           <div class="d-flex align-items-center">
           <img src="/Fecha-Icon.svg" alt="Fecha Icon" class="img-fluid me-2" />
           <h2 class="fw-bold ms-3 mt-2"> Fecha</h2>
+          </div>
+          <div class="d-flex align-items-center">
+          <h3 class="mb-0" [ngClass]="{'fw-bold': fechaSeleccionada}">{{fechaSeleccionada}}</h3>
+        </div>
         <app-modal-crear-fecha #modalVerFecha (fechaGuardada)="recibirFechaYHora($event)"></app-modal-crear-fecha>
       </div>
     </div>
