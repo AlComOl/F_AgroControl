@@ -42,7 +42,7 @@
         @if (aplicadoresSeleccionados != null || aplicadoresSeleccionados) {
           <div class="d-flex flex-column">
           @for (aplicador of aplicadoresSeleccionados; track aplicador.id) {
-            <h5>{{aplicador.nombre}}</h5>
+            <h3 class="mb-0" [ngClass]="{'fw-bold': aplicador.nombre}">{{aplicador.nombre}}</h3>
           }
           </div>
         }
@@ -61,8 +61,7 @@
           <img src="/Maquina-Icon.svg" alt="Máquina img" class="img-fluid me-2" />
           <h2 class="fw-bold ms-3 mt-2">Máquina</h2>
         </div>
-        <h3 class="mb-0">{{ maquinaSeleccionada?.nombre}}</h3>
-      </div>
+        <h3 class="mb-0" [ngClass]="{'fw-bold': maquinaSeleccionada?.nombre}">{{maquinaSeleccionada?.nombre}}</h3>      </div>
       <app-modal-crear-maquina #modalVerMaquina (maquinaGuardada)="recibirMaquina($event)"></app-modal-crear-maquina>
     </div>
   </div>
@@ -76,7 +75,7 @@
             <img src="/Tratamiento-Icon.svg" alt="Tratamiento Icon" class="img-fluid me-2" />
             <h2 class="fw-bold ms-3 mt-2">Tratamiento</h2>
           </div>
-          <h3 class="mb-0 ms-5">{{ tratamientoSeleccionado?.nombre}}</h3>
+          <h3 class="mb-0" [ngClass]="{'fw-bold': tratamientoSeleccionado?.nombre}">{{tratamientoSeleccionado?.nombre}}</h3>      
         </div>
         <app-modal-crear-tratamiento #modalVerTratamiento (tratamientoGuardado)="recibirTratamiento($event)"></app-modal-crear-tratamiento>
       </div>
