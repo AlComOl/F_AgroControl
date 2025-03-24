@@ -6,20 +6,7 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-/* Selección más específica para los botones en el menú de navegación */
-.navbar-nav .nav-item .btn-outline-success {
-  transition: background-color 0.3s, color 0.3s; /* Opcional: para hacer la transición más suave */
-}
 
-/* Efecto hover cuando el usuario pasa el ratón por encima */
-.navbar-nav .nav-item .btn-outline-success:hover {
-  background-color: #8B4513; /* Marrón, puedes elegir otro color */
-  color: white; /* Cambiar el texto a blanco */
-}
 
-/* Estilo cuando el botón es presionado (activo) */
-.navbar-nav .nav-item .btn-outline-success:active {
-  background-color: #A0522D; /* Un marrón más oscuro */
-  color: white;
-}
+
 

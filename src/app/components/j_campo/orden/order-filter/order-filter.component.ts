@@ -9,7 +9,10 @@ import { Router, RouterModule } from '@angular/router';
   templateUrl: './order-filter.component.html',
   styleUrl: './order-filter.component.css'
 })
+
+
 export class OrderFilterComponent {
+
 
 
 constructor( private router:Router){
@@ -18,7 +21,12 @@ constructor( private router:Router){
 
 
   navegateEnCurso(ruta: string) {
+
     this.router.navigate(['/j_campo/orden/orden-curso']);
+
+}
+isActive(ruta: string): boolean {
+  return this.router.url === ruta;
 }
 
  navegatePendientes(ruta: string){
@@ -30,5 +38,7 @@ constructor( private router:Router){
   navegateTerminadas(ruta: string){
     this.router.navigate(['/j_campo/orden/orden-terminadas']);
   }
+
+
 
 }
