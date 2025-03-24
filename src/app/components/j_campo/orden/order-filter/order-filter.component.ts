@@ -25,18 +25,29 @@ constructor( private router:Router){
     this.router.navigate(['/j_campo/orden/orden-curso']);
 
 }
-isActive(ruta: string): boolean {
-  return this.router.url === ruta;
-}
+    isActive(ruta: string): boolean {
+      return this.router.url === ruta;
+    }
 
  navegatePendientes(ruta: string){
   this.router.navigate(['/j_campo/orden/orden-pendientes']);
   }
+
+  isActivePe(ruta: string): boolean {
+    return this.router.url === ruta;
+  }
   navegatePausadas(ruta: string){
     this.router.navigate(['/j_campo/orden/orden-pausadas']);
   }
+  isActivePa(ruta: string): boolean {
+    return this.router.url === ruta;
+  }
   navegateTerminadas(ruta: string){
     this.router.navigate(['/j_campo/orden/orden-terminadas']);
+  }
+
+  isActiveTe(ruta: string): boolean {
+    return this.router.url === ruta;
   }
 
 

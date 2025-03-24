@@ -9,13 +9,25 @@
         </button>
      </li>
       <li class="nav-item ">
-        <button class="btn" (click)="navegatePendientes('/j_campo/orden/orden-pendientes')">Pendientes</button>
+        <button class="btn fw-semibold"
+           [ngStyle]="{'background-color': isActivePe('/j_campo/orden/orden-pendientes') ? 'rgba(0, 66, 21, 0.08)' : '#ffffff'}"
+           (click)="navegatePendientes('/j_campo/orden/orden-pendientes')">
+            Pendientes
+        </button>
       </li>
       <li class="nav-item ">
-         <button class="btn" (click)="navegatePausadas('/j_campo/orden/orden-pausadas')">Pausadas</button>
+        <button class="btn fw-semibold"
+        [ngStyle]="{'background-color': isActivePa('/j_campo/orden/orden-pausadas') ? 'rgba(0, 66, 21, 0.08)' : '#ffffff'}"
+        (click)="navegatePausadas('/j_campo/orden/orden-pausadas')">
+         Pausada
+     </button>
       </li>
       <li class="nav-item ">
-         <button class="btn"  (click)="navegateTerminadas('/j_campo/orden/orden-terminadas')">Terminadas</button>
+        <button class="btn fw-semibold"
+        [ngStyle]="{'background-color': isActiveTe('/j_campo/orden/orden-terminadas') ? 'rgba(0, 66, 21, 0.08)' : '#ffffff'}"
+        (click)="navegateTerminadas('/j_campo/orden/orden-terminadas')">
+         Terminada
+     </button>
       </li>
     </ul>
   </div>
