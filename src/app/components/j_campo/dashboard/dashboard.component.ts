@@ -1,10 +1,7 @@
-import { Component,ViewChild,ElementRef } from '@angular/core';
+import { Component,OnInit} from '@angular/core';
+import Chart from 'chart.js/auto';
 import { TareasComponent } from "./tareas/tareas.component";
-import { Modal } from 'bootstrap';
-import { DatePipe } from '@angular/common';
-import { CommonModule } from '@angular/common';
 
-import{ OrdenesService } from './../../../services/ordenes.service';
 
 
 
@@ -14,84 +11,53 @@ import{ OrdenesService } from './../../../services/ordenes.service';
   standalone: true,
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
-  imports: [CommonModule],
-  providers:[DatePipe]
+  imports: [TareasComponent],
+  providers:[]
 })
 
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
-  fecha: any = null;
+  public chart:Chart;
 
-  ordenesCurso: any;
+  ngOnInit(): void{
 
-  parcela:any;
-  tarea:any;
-  fecha_inicio:any;
-
-  constructor(private datePipe: DatePipe, private ordenesService: OrdenesService) {
-    let fechaN = this.datePipe.transform(new Date(), 'yyyy-MMMM-dd');
-    let fechaF = fechaN!.split("-");
-    let dia = fechaF[2];
-    let mes = fechaF[1];
-    let anyo = fechaF[0];
-    switch (mes) {
-      case 'January':
-        mes = 'Enero';
-        break;
-      case 'February':
-        mes = 'Febrero';
-        break;
-      case 'March':
-        mes = 'Marzo';
-        break;
-      case 'April':
-        mes = 'Abril';
-        break;
-      case 'May':
-        mes = 'Mayo';
-        break;
-      case 'June':
-        mes = 'Junio';
-        break;
-      case 'July':
-        mes = 'Julio';
-        break;
-      case 'August':
-        mes = 'Agosto';
-        break;
-      case 'September':
-        mes = 'Septiembre';
-        break;
-      case 'October':
-        mes = 'Octubre';
-        break;
-      case 'November':
-        mes = 'Noviembre';
-        break;
-      case 'December':
-        mes = 'Diciembre';
-        break;
-
-    }
-
-    this.fecha = dia + ' de ' + mes + ' de ' + anyo;
-
-        this.ordenesService.getOrdenesCurso()
-          .subscribe(result => this.ordenesCurso = result)
-
-}
+    const canvas = document.getElementById('chart') as HTMLCanvasElement;
+    const ctx = canvas.getContext('2d');
 
 
 
 
- @ViewChild('incidenciaModal') incidenciaModal: ElementRef | undefined;
+    const chart = {
+      labels: [
+        'En curso',
+        'Pendiente',
+        'Pausada',
+        'Terminada',
+      ],
+      datasets: [{
+        label: 'My First Dataset',
+        data: [200, 150, 100,50],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)',
+          'rgb(104, 78, 18)',
+        ],
+        hoverOffset: 5
+      }]
+    };
+
+    this.chart = new Chart(ctx, {
+      type: 'doughnut',  // Tipo de gráfico
+      data: chart,  // Datos
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    });
 
 
-  abrirModalIncidencia(): void {
-    if (this.incidenciaModal) {
-      const modal = new Modal(this.incidenciaModal.nativeElement);
-      modal.show();  // Mostrar el modal
-    }
   }
 
 }
+
