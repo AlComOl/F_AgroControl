@@ -1,6 +1,7 @@
 import { Component,OnInit} from '@angular/core';
 import Chart from 'chart.js/auto';
 import { TareasComponent } from "./tareas/tareas.component";
+import{ OrdenesService } from '../../../services/ordenes.service';
 
 
 
@@ -17,26 +18,76 @@ import { TareasComponent } from "./tareas/tareas.component";
 
 export class DashboardComponent implements OnInit {
 
+  ordenesCurso: any;
+  ordenesPendientes: any;
+  ordenesPausadas: any;
+  ordenesTerminadas: any;
+
+  numOrdenesCurso: number=0;
+  numOrdenesPendientes: number=0;
+  numOrdenesPausadas: number=0;
+  numOrdenesTerminadas: number=0;
+  orden: any;
   public chart:Chart;
+
+
+    constructor(private ordenesService: OrdenesService) {}
+
+
+
 
   ngOnInit(): void{
 
+    this.ordenesService.getOrdenesCurso().subscribe(result => {
+    this.ordenesCurso = result;
+    this.numOrdenesCurso = this.ordenesCurso.filter(orden => orden.estado === 'en curso').length;
+    console.log(this.numOrdenesCurso);
+    this.generarGrafico();
+    });
+
+    this.ordenesService.getOrdenesPendientes().subscribe(result => {
+    this.ordenesPendientes = result;
+    this.numOrdenesPendientes = this.ordenesPendientes.filter(orden => orden.estado === 'pendiente').length;
+    console.log(this.ordenesPendientes);
+    this.generarGrafico();
+      });
+
+    this.ordenesService.getOrdenesPausa().subscribe(result => {
+    this.ordenesPausadas = result;
+    this.numOrdenesPausadas = this.ordenesPendientes.filter(orden => orden.estado === 'pausadas').length;
+    console.log(this.numOrdenesPausadas);
+    this.generarGrafico();
+      });
+
+
+    this.ordenesService.getOrdenesTerminadas().subscribe(result => {
+    this.ordenesTerminadas = result;
+    this.numOrdenesTerminadas = this.ordenesTerminadas.filter(orden => orden.estado === 'completada').length;
+    console.log(this.ordenesTerminadas);
+    this.generarGrafico();
+     });
+  }
+
+
+    generarGrafico():void{
     const canvas = document.getElementById('chart') as HTMLCanvasElement;
     const ctx = canvas.getContext('2d');
 
-
-
-
     const chart = {
       labels: [
-        'En curso',
-        'Pendiente',
-        'Pausada',
-        'Terminada',
+        this.ordenesCurso.filter(orden => orden.estado === 'en curso').length,
+        this.ordenesPendientes.filter(orden => orden.estado === 'pendiente').length,
+        this.ordenesPausadas.filter(orden => orden.estado === 'pausada').length,
+        this.ordenesTerminadas.filter(orden => orden.estado === 'completada').length,
       ],
       datasets: [{
-        label: 'My First Dataset',
-        data: [200, 150, 100,50],
+        label: 'Estado Ordenes',
+        data: [
+        this.ordenesCurso.filter(orden => orden.estado === 'en curso').length,
+        this.ordenesPendientes.filter(orden => orden.estado === 'pendiente').length,
+        this.ordenesPausadas.filter(orden => orden.estado === 'pausada').length,
+        this.ordenesTerminadas.filter(orden => orden.estado === 'completada').length,
+        ],
         backgroundColor: [
           'rgb(255, 99, 132)',
           'rgb(54, 162, 235)',
@@ -55,9 +106,6 @@ export class DashboardComponent implements OnInit {
         maintainAspectRatio: false
       }
     });
-
-
   }
-
 }
 
