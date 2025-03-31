@@ -75,10 +75,10 @@ export class DashboardComponent implements OnInit {
 
     const chart = {
       labels: [
-        this.ordenesCurso.filter(orden => orden.estado === 'en curso').length,
-        this.ordenesPendientes.filter(orden => orden.estado === 'pendiente').length,
-        this.ordenesPausadas.filter(orden => orden.estado === 'pausada').length,
-        this.ordenesTerminadas.filter(orden => orden.estado === 'completada').length,
+        'En curso',
+        'Pendiente',
+        'Pausada',
+        'Terminada',
       ],
       datasets: [{
         label: 'Estado Ordenes',
@@ -89,10 +89,10 @@ export class DashboardComponent implements OnInit {
         this.ordenesTerminadas.filter(orden => orden.estado === 'completada').length,
         ],
         backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)',
-          'rgb(104, 78, 18)',
+          'rgb(26, 85, 3)',
+          'rgb(175, 24, 13)',
+          'rgb(198, 172, 2)',
+          'rgb(81, 102, 235)',
         ],
         hoverOffset: 5
       }]

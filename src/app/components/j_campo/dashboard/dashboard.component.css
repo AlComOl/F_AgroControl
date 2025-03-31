@@ -1,32 +1,6 @@
 
-.circle {
-  width: 50vw; /* Tamaño relativo al ancho de la pantalla */
-  max-width: 200px; /* Tamaño máximo */
-  height: 50vw; /* Mantener proporción */
-  max-height: 200px; /* Tamaño máximo */
-  border-radius: 50%;
-  background: conic-gradient(
-    blue 0% 25%,
-    green 25% 50%,
-    red 50% 75%,
-    orange 75% 100%
-  );
-  position: relative;
-  margin: 0 auto;
-  padding: 5px;
-}
 
-.circle::before {
-  content: "";
-  width: 90%; /* Tamaño relativo al contenedor */
-  height: 90%;
-  background: #fff; /* Fondo blanco */
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
 
 .center-text {
   position: absolute;
@@ -38,14 +12,6 @@
   color: #333;
 }
 
-.total-tasks {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2rem; /* Tamaño relativo */
-  color: #333;
-}
 p{
   font-weight: 900;
 }
@@ -59,25 +25,6 @@ p{
   margin-right: 8px; /* Espacio entre el punto y el texto */
 }
 
-.dot-blue {
-  background-color: blue;
-}
-
-.dot-green {
-  background-color: green;
-}
-
-.dot-red {
-  background-color: red;
-}
-
-.dot-orange {
-  background-color: orange;
-}
-
-.text-brown {
-  color: #8B4513;
-}
 
 .legend {
   display: flex;
@@ -167,5 +114,12 @@ h1 {
 
 .overflow-auto {
   max-height: 880px; /* Ajusta según necesidad */
-  overflow-y: auto;
+
+}
+app-tareas {
+  display: block; /* Asegura que se comporte como bloque */
+  max-height: 500px; /* Ajusta según necesites */
+  overflow-y: auto; /* Permite el desplazamiento vertical si el contenido es grande */
+  border: 1px solid #ddd; /* Opcional: añade un borde para diferenciarlo */
+  padding: 10px; /* Opcional: mejora el espaciado interno */
 }

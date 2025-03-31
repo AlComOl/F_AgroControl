@@ -2,7 +2,7 @@
   <h1 class="modal-title w-100 text-center pb-3 mt-4">Crear Orden</h1>
   <div class="row">
     <div  class="col-12 mb-3">
-      <div class="card shadow"  [ngStyle]="{'background-color': parcelaSeleccionada ? 'rgba(0, 66, 21, 0.08)' : '#ffffff'}" (click)="abrirModalParcela()" style="cursor: pointer;">
+      <div class="card shadow"  [ngStyle]="{'background-color': parcelaSeleccionada ? 'rgba(0, 66, 21, 0.08)' : '#ffffff', 'border': !parcelaSeleccionada ? '3px solid green': '0px'}" (click)="abrirModalParcela()" style="cursor: pointer;">
         <div class="card-body parcelas ">
           <div class="card-title d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
@@ -16,8 +16,8 @@
       </div>
     </div>
 
-    <div class="col-12 mb-3" [ngStyle]="{'background-color': !parcelaSeleccionada ? 'rgba(0, 66, 21, 0.08)' : '#ffffff','opacity': !parcelaSeleccionada ? '0.5' : '1','pointer-events': !parcelaSeleccionada ? 'none' : 'auto'}">
-     <div class="card shadow" [ngStyle]="{'background-color' :tareaSeleccionada  ? 'rgba(0, 66, 21, 0.08)' : '#ffffff'}" (click)="abrirModalTarea()" style="cursor: pointer;">
+    <div class="col-12 mb-3" [ngStyle]="{'background-color': !parcelaSeleccionada ? 'rgba(0, 66, 21, 0.08)' : '#ffffff', 'opacity': !parcelaSeleccionada ? '0.5' : '1','pointer-events': !parcelaSeleccionada ? 'none' : 'auto'}">
+     <div class="card shadow" [ngStyle]="{'background-color' :tareaSeleccionada  ? 'rgba(0, 66, 21, 0.08)' : '#ffffff', 'border': parcelaSeleccionada && !tareaSeleccionada ? '3px solid green': '0px'}" (click)="abrirModalTarea()" style="cursor: pointer;">
         <div class="card-body tareas">
           <div class="card-title d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
@@ -32,7 +32,7 @@
     </div>
 
     <div class="col-12 mb-3" [ngStyle]="{'background-color': !tareaSeleccionada ? 'rgba(0, 66, 21, 0.08)' : '#ffffff','opacity': !tareaSeleccionada ? '0.5' : '1','pointer-events': !tareaSeleccionada ? 'none' : 'auto'}">
-    <div class="card shadow"  [ngStyle]="{'background-color': aplicadoresSeleccionados ? 'rgba(0, 66, 21, 0.08)' : '#ffffff'}" (click)="abrirModalAplicador()" style="cursor: pointer;">
+    <div class="card shadow"  [ngStyle]="{'background-color': aplicadoresSeleccionados ? 'rgba(0, 66, 21, 0.08)' : '#ffffff','border': tareaSeleccionada && !aplicadoresSeleccionados ? '3px solid green': '0px'}" (click)="abrirModalAplicador()" style="cursor: pointer;">
     <div class="card-body aplicadores">
       <div class="card-title d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
@@ -54,7 +54,7 @@
 </div>
 
 <div class="col-12 mb-3" [ngStyle]="{'background-color': !aplicadoresSeleccionados ? 'rgba(0, 66, 21, 0.08)' : '#ffffff','opacity': !aplicadoresSeleccionados ? '0.5' : '1','pointer-events': !aplicadoresSeleccionados ? 'none' : 'auto'}">
-  <div class="card shadow"  [ngStyle]="{'background-color': maquinaSeleccionada ? 'rgba(0, 66, 21, 0.08)' : '#ffffff'}" (click)="abrirModalMaquina()" style="cursor: pointer;">
+  <div class="card shadow"  [ngStyle]="{'background-color': maquinaSeleccionada ? 'rgba(0, 66, 21, 0.08)' : '#ffffff','border': aplicadoresSeleccionados && !maquinaSeleccionada ? '3px solid green': '0px'}" (click)="abrirModalMaquina()" style="cursor: pointer;">
     <div class="card-body maquinas">
       <div class="card-title d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
@@ -68,7 +68,7 @@
 </div>
 
 <div class="col-12 mb-3" [ngStyle]="{'background-color': !maquinaSeleccionada ? 'rgba(0, 66, 21, 0.08)' : '#ffffff','opacity': !maquinaSeleccionada ? '0.5' : '1','pointer-events': !maquinaSeleccionada ? 'none' : 'auto'}">
-  <div class="card shadow"  [ngStyle]="{'background-color': tratamientoSeleccionado ? 'rgba(0, 66, 21, 0.08)' : '#ffffff'}" (click)="abrirModalTratamiento()" style="cursor: pointer;">
+  <div class="card shadow"  [ngStyle]="{'background-color': tratamientoSeleccionado ? 'rgba(0, 66, 21, 0.08)' : '#ffffff','border': maquinaSeleccionada && !tratamientoSeleccionado? '3px solid green': '0px'}" (click)="abrirModalTratamiento()" style="cursor: pointer;">
       <div class="card-body tratamientos">
         <div class="card-title d-flex justify-content-between align-items-center">
           <div class="d-flex align-items-center">
@@ -83,7 +83,7 @@
   </div>
 
   <div class="col-12 mb-3" [ngStyle]="{'background-color': !tratamientoSeleccionado ? 'rgba(0, 66, 21, 0.08)' : '#ffffff','opacity': !tratamientoSeleccionado ? '0.5' : '1','pointer-events': !tratamientoSeleccionado ? 'none' : 'auto'}">
-    <div class="card shadow"  [ngStyle]="{'background-color': fechaSeleccionada ? 'rgba(0, 66, 21, 0.08)' : '#ffffff'}" (click)="abrirModalFecha() " style="cursor: pointer;">
+    <div class="card shadow"  [ngStyle]="{'background-color': fechaSeleccionada ? 'rgba(0, 66, 21, 0.08)' : '#ffffff','border': tratamientoSeleccionado && !fechaSeleccionada ? '3px solid green': '0px'}" (click)="abrirModalFecha() " style="cursor: pointer;">
       <div class="card-body fecha">
         <div class="card-title d-flex justify-content-between align-items-center">
           <div class="d-flex align-items-center">
