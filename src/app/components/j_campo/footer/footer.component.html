@@ -1,7 +1,7 @@
 
 
   <!-- Incidencias Menu -->
-  <div id="menuD" [hidden]="!isIncidenciaMenuVisible">
+  <!-- <div id="menuD" [hidden]="!isIncidenciaMenuVisible">
     <div>
       <button class="close-btn" (click)="closeIncidenciaMenu()">X</button>
       <h1 >Incidencias</h1>
@@ -9,7 +9,7 @@
       <h3 [routerLink]="['incidencias/tipo-maquina']" style="cursor: pointer;">Máquina</h3>
       <h3 [routerLink]="['incidencias/tipo-stock']" style="cursor: pointer;">Stock</h3>
     </div>
-  </div>
+  </div> -->
 
 <!-- ordenes -->
   <!-- <div id="menuD" [hidden]="!isOrdenMenuVisible">
@@ -57,7 +57,8 @@
 
     <!-- Botón Incidencias -->
     <div class="incidencia">
-      <div class="btn" (click)="IncidenciaMenu()">
+      <!-- <div class="btn" (click)="IncidenciaMenu()"> -->
+        <div class="btn"  [routerLink]="['incidencias/tipos/tipo-maquina']">
         <img src="/Incidencia.svg" alt="incidencia" />
       </div>
     </div>
@@ -65,7 +66,7 @@
     <!-- Botón Orden -->
     <div class="orden">
       <!-- <div class="btn" (click)="OrdenMenu()"> -->
-        <div class="btn"  [routerLink]="['orden/ordenes']">
+        <div class="btn"  [routerLink]="['orden/orden-curso']">
         <img src="/tareas.svg" alt="ordenes" />
       </div>
     </div>

@@ -1,24 +1,24 @@
-<div class="d-flex justify-content-center align-items-center" style="width: 120%;">
-  <div class="container">
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h1>Incidencias Personales</h1>
-      <table class="table table-striped">
+<app-incidencia-filter></app-incidencia-filter>
+<div class="container" [hidden]="!mostrarId" >
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <table class="table table-striped">
         <thead>
           <tr>
             <th>Aplicador</th>
             <th>Descripción</th>
-            <th>Fecha </th>
+            <th>Fecha</th>
           </tr>
         </thead>
         <tbody >
-          <tr *ngFor="let incidencia of incidenciasPersonal" data-bs-toggle="modal" data-bs-target="#incidenciaPersonaShow" (click)="seleccionarIncidenciaP(incidencia)">
-            <td>{{buscarPersona(incidencia.user_id)[0].nombre}}</td> <!-- Llamamos a buscarPersona para obtener el nombre -->
-            <td>{{ incidencia.descripcion }}</td>
-            <td>{{ incidencia.fecha }}</td>
+          @for(personal of incidenciasPersonal; track personal.id){
+          <tr data-bs-toggle="modal" data-bs-target="#ordenTodasShow" (click)="seleccionarTodasIncidencias(incidenciasPersonal)">
+            <td>{{ personal.estado }}</td>
+            <td>{{ personal.descripcion}}
+            <td>{{ personal.fecha }}</td>
           </tr>
-
-          </tbody>
+        }
+        </tbody>
       </table>
     </div>
   </div>

@@ -3,11 +3,11 @@ import { Component } from '@angular/core';
 import { IncidenciasService } from '../../../../../services/incidencias.service';
 import { TrabajadoresService } from '../../../../../services/trabajadores.service';
 import { OrdenesService } from '../../../../../services/ordenes.service';
-import { Orden } from '../../../../../models/Orden';
+import { IncidenciaFilterComponent  } from '../../incidencia-filter/incidencia-filter.component';
 
 @Component({
   selector: 'app-tipo-personal',
-  imports: [CommonModule],
+  imports: [CommonModule,IncidenciaFilterComponent],
   templateUrl: './tipo-personal.component.html',
   styleUrl: './tipo-personal.component.css'
 })
@@ -16,7 +16,7 @@ export class TipoPersonalComponent {
   incidenciaSeleccionada: any;
   ordenSeleccionada:any;
   persona:any;
-
+  mostrarId: boolean=true;
     parcela:any;
     tarea:any;
     fecha_inicio:any;
@@ -67,7 +67,10 @@ export class TipoPersonalComponent {
         return "Cargando..."; // Mientras esperamos la respuesta, retornamos null o un valor vacío
       }
     }
+    seleccionarTodasIncidencias(incidenciasPersonal:any){
 
+
+    }
 
 }
 
