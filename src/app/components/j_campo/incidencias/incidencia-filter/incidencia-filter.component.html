@@ -1,28 +1,27 @@
-
 <nav class="navbar navbar-expand">
-  <div class="container-fluid">
-    <ul class="navbar-nav ">
+  <div class="container-fluid d-flex justify-content-center">
+    <ul class="navbar-nav">
       <li class="nav-item ">
         <button class="btn fw-semibold"
-           [ngStyle]="{'background-color': isActive('/j_campo/incidencias/tipos/tipo-maquina') ? 'rgba(0, 66, 21, 0.08)' : '#ffffff'}"
-           (click)="navegateMaquina('/j_campo/incidencias/tipos/tipo-maquina')">
-            Maquina
-        </button>
-     </li>
-      <li class="nav-item ">
-        <button class="btn fw-semibold"
-           [ngStyle]="{'background-color': isActivePe('/j_campo/incidencias/tipos/tipo-personal') ? 'rgba(0, 66, 21, 0.08)' : '#ffffff'}"
-           (click)="navegatePersonal('/j_campo/incidencias/tipos/tipo-personal')">
-            Personal
+          [ngStyle]="{'background-color': isActive('/j_campo/incidencias/tipos/tipo-maquina') ? 'rgba(0, 66, 21, 0.08)' : '#ffffff'}"
+          (click)="navegateMaquina('/j_campo/incidencias/tipos/tipo-maquina')">
+          Maquina
         </button>
       </li>
-      <li class="nav-item ">
+      <li class="nav-item">
         <button class="btn fw-semibold"
-        [ngStyle]="{'background-color': isActiveSt('/j_campo/incidencias/tipos/tipo-stock') ? 'rgba(0, 66, 21, 0.08)' : '#ffffff'}"
-        (click)="navegateStock('/j_campo/incidencias/tipos/tipo-stock')">
-            Stock
-     </button>
+          [ngStyle]="{'background-color': isActivePe('/j_campo/incidencias/tipos/tipo-personal') ? 'rgba(0, 66, 21, 0.08)' : '#ffffff'}"
+          (click)="navegatePersonal('/j_campo/incidencias/tipos/tipo-personal')">
+          Personal
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="btn fw-semibold"
+          [ngStyle]="{'background-color': isActiveSt('/j_campo/incidencias/tipos/tipo-stock') ? 'rgba(0, 66, 21, 0.08)' : '#ffffff'}"
+          (click)="navegateStock('/j_campo/incidencias/tipos/tipo-stock')">
+          Stock
+        </button>
+      </li>
     </ul>
   </div>
 </nav>
-

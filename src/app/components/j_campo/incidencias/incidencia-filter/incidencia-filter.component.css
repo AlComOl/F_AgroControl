@@ -1,1 +1,10 @@
+.navbar-nav {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  position: unset !important;
+}
+
 
