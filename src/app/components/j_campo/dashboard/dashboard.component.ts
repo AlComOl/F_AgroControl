@@ -54,7 +54,7 @@ export class DashboardComponent implements OnInit {
 
     this.ordenesService.getOrdenesPausa().subscribe(result => {
     this.ordenesPausadas = result;
-    this.numOrdenesPausadas = this.ordenesPendientes.filter(orden => orden.estado === 'pausadas').length;
+    this.numOrdenesPausadas = this.ordenesPausadas.filter(orden => orden.estado === 'pausadas').length;
     console.log(this.numOrdenesPausadas);
     this.generarGrafico();
       });

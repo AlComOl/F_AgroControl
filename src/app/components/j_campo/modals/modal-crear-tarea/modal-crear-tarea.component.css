@@ -1,10 +1,4 @@
-.btn {
-  display: block;
-  width: fit-content; /* Se ajusta al contenido */
-  background-color: #532301;
-  text-align: center;
-  color: white;
-  margin: 20px auto; /* Lo centra horizontalmente */
-  padding: 10px 20px;
+.btn{
+  display: flex;
+  background-color:#532301;
 }
-
