@@ -20,15 +20,17 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
 
 
 
+
 export const routes: Routes = [
   {
-    path: '',
+    path: 'login',
     component: AuthLayoutComponent,
     children: [{ path: '', component: LoginComponent }]
   },
   {
     path: 'j_campo',
     component: MainLayoutComponent,
+
     children: [
 
           { path: 'dashboard', component: DashboardComponent },
@@ -63,11 +65,15 @@ export const routes: Routes = [
               { path: 'orden-terminadas', component: OrdenTerminadasComponent },
 
             ]
-          }
+          },
+
+
         ],
 
       },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
+
+
 ]
 
 

@@ -23,10 +23,10 @@
     </div>
   </div> -->
 
-
-   <!--  Menu -->
-    <div id="menuD" [hidden]="!isCuentaMenuVisible">
-      <div>
+  <!-- menu con modal -->
+  <!-- <div class="modal-overlay" (click)="close()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
         <button class="close-btn" (click)="closeCuentaMenu()">X</button>
         <h1>Menú</h1>
         <h3 class="desMenu1" [routerLink]="['cuenta']" style="cursor: pointer;">Cuenta</h3>
@@ -34,6 +34,26 @@
         <h3 class="desMenu1" [routerLink]="['tratamientos']" style="cursor: pointer;">Tratamientos</h3>
         <h3 class="desMenu1" [routerLink]="['almacen']" style="cursor: pointer;">Almacén</h3>
         <h3 class="desMenu1" [routerLink]="['salir']" style="cursor: pointer;">Salir</h3>
+      </div>
+      <div class="modal-body">
+        <ng-content></ng-content>
+      </div>
+
+    </div>
+
+
+  </div> -->
+
+   <!--  Menu -->
+    <div id="menuD" [hidden]="!isCuentaMenuVisible">
+      <div>
+        <button class="close-btn" (click)="closeCuentaMenu()">X</button>
+        <h1>Menú</h1>
+        <div class="desMenu1" [routerLink]="['cuenta']" style="cursor: pointer;"><img  style="font-weight: bold;" src="/Cuenta.svg" alt="salir" /> Cuenta</div>
+        <div class="desMenu1" [routerLink]="['mensajes']" style="cursor: pointer;"><img  style="font-weight: bold;" src="/Mensage.svg" alt="salir" />Mensajes</div>
+        <div class="desMenu1" [routerLink]="['tratamientos']" style="cursor: pointer;"><img  style="font-weight: bold;" src="/tratamientosubmenu.svg" alt="salir" />Tratamientos</div>
+        <div class="desMenu1" [routerLink]="['almacen']" style="cursor: pointer;"><img  style="font-weight: bold;" src="/warehouse-svgrepo-com.svg" alt="salir" />Almacén</div>
+        <div class="desMenu1" [routerLink]="['/login']" style="cursor: pointer; font-weight: bold;" ><img src="/salir.svg" alt="salir" />Salir</div>
       </div>
     </div>
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -15,6 +15,8 @@ export class FooterComponent {
   isIncidenciaMenuVisible: boolean = false;
   isOrdenMenuVisible: boolean = false;
   isCuentaMenuVisible: boolean = false;
+
+
 
 
   // Función para alternar la visibilidad
